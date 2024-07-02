@@ -1,7 +1,7 @@
 import random
 
 def create_deck():
-    default_deck = {}
+    default_deck = []
     
 
     default_suits = ["Spades", "Hearts", "Diamonds", "Clubs"]
