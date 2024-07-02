@@ -8,8 +8,14 @@ def create_deck():
 
     for suit in default_suits:
         for value in default_values:
-            default_deck[suit] = value
-            print(f"{value} of {suit}s")
+            default_deck.update({suit: value})
+            
+
+    print(default_deck)
 
     return default_deck
 
+
+def draw_card(nums):
+    my_draw = random.randint(0, 52)
+    pass
