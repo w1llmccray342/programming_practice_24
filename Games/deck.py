@@ -32,4 +32,6 @@ def draw_card(nums):
         my_draw = random.randint(0, 3)
         my_second_draw = random.randint(0, 12)
 
-        print(my_deck[my_draw])
+        x = my_deck[my_draw]
+
+        print(x)
