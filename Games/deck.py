@@ -24,6 +24,7 @@ def create_deck():
 
 def draw_card(nums):
 
+    drawn_suits = []
     drawn_cards = []
     
     my_deck = create_deck()
@@ -32,6 +33,7 @@ def draw_card(nums):
         my_draw = random.randint(0, 3)
         my_second_draw = random.randint(0, 12)
 
-        x = my_deck[my_draw]
+        drawn_suits.append(my_deck)
+        drawn_cards.append(my_second_draw)
 
-        print(x)
+    print(drawn_cards, drawn_suits)
