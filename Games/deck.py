@@ -33,9 +33,7 @@ def draw_card(nums):
         my_second_draw = random.randint(0, 12)
 
         # Add drawn cards to drawn cards list
-        drawn_cards.append(my_deck[my_draw][my_second_draw])
+        drawn_cards.append(my_deck[my_draw][my_second_draw])   
 
-        # Remove drawn cards from my_deck
-        my_deck.remove([my_draw][my_second_draw])
     print(drawn_cards)
     print(my_deck)
