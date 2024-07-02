@@ -1,7 +1,7 @@
 import random
 
 def create_deck():
-    default_deck = []
+    default_deck = {}
     
 
     default_suits = ["Spades", "Hearts", "Diamonds", "Clubs"]
@@ -13,6 +13,7 @@ def create_deck():
             temp_value = (f"{value} Of {suit}")
             default_list.append(temp_value)
 
+        default_deck.update({suit: default_list})
 
             
 
