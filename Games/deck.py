@@ -2,13 +2,18 @@ import random
 
 def create_deck():
     default_deck = {}
+    default_list = []
 
     default_suits = ["Spades", "Hearts", "Diamonds", "Clubs"]
-    default_values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"]
+    default_values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
 
     for suit in default_suits:
         for value in default_values:
-            default_deck.update({suit: value})
+            temp_value = (f"{value} Of {suit}")
+            default_list.append(temp_value)
+
+        default_deck.update({suit: default_list})
+
             
 
     print(default_deck)
