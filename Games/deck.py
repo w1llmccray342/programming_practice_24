@@ -23,5 +23,11 @@ def create_deck():
 
 
 def draw_card(nums):
-    my_draw = random.randint(0, 52)
-    pass
+
+    drawn_cards = []
+
+    for card in range(nums):
+        my_draw = random.randint(0, 12)
+        drawn_cards.append(my_draw)
+
+    print(drawn_cards)
