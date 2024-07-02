@@ -13,7 +13,6 @@ def create_deck():
             temp_value = (f"{value} Of {suit}")
             default_list.append(temp_value)
 
-        default_deck.append(default_list)
 
             
 
