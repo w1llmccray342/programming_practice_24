@@ -36,4 +36,3 @@ def draw_card(nums):
         drawn_cards.append(my_deck[my_draw][my_second_draw])   
 
     print(drawn_cards)
-    print(my_deck)
