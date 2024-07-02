@@ -36,3 +36,4 @@ def draw_card(nums):
         drawn_suits.append(my_second_draw)
 
     print(drawn_cards)
+    print(drawn_suits)
