@@ -25,9 +25,14 @@ def create_deck():
 def draw_card(nums):
 
     drawn_cards = []
+    drawn_suits = []
 
     for card in range(nums):
         my_draw = random.randint(0, 12)
+        my_second_draw = random.randint(0, 3)
+        
         drawn_cards.append(my_draw)
+        
+        drawn_suits.append(my_second_draw)
 
     print(drawn_cards)
