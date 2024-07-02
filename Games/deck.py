@@ -13,11 +13,9 @@ def create_deck():
             temp_value = (f"{value} Of {suit}")
             default_list.append(temp_value)
 
-        default_deck.update({suit: default_list})
+        default_deck.append(default_list)
 
             
-
-    print(default_deck)
 
     return default_deck
 
@@ -28,6 +26,8 @@ def draw_card(nums):
     drawn_cards = []
     
     my_deck = create_deck()
+
+    print(my_deck)
 
     for card in range(nums):
         my_draw = random.randint(0, 3)
