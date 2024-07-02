@@ -8,8 +8,8 @@ def create_deck():
     default_values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
 
     for suit in default_suits:
+        default_list = []
         for value in default_values:
-            default_list = []
             temp_value = (f"{value} Of {suit}")
             default_list.append(temp_value)
 
