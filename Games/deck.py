@@ -33,7 +33,7 @@ def draw_card(nums):
         my_draw = random.randint(0, 3)
         my_second_draw = random.randint(0, 12)
 
-        drawn_suits.append(my_deck)
+        drawn_suits.append(my_draw)
         drawn_cards.append(my_second_draw)
 
     print(drawn_cards, drawn_suits)
