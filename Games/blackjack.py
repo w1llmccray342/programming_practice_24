@@ -30,10 +30,8 @@ def find_sum_of_cards(ival, hand):
             print(my_temp_value)
             
             # We use conditional statements to check and assign a value
-            if "10" in my_temp_value:
-                my_int_temp_value = 10
            
-            elif "J" in my_temp_value or "Q" in my_temp_value or "K" in my_temp_value:
+            if my_temp_value == "10" or my_temp_value in ["J", "Q", "K"]:
                 my_int_temp_value = 10
            
             elif my_temp_value[0] == "A":
@@ -44,10 +42,11 @@ def find_sum_of_cards(ival, hand):
                 my_int_temp_value = int(my_temp_value[0])
 
             my_int_temp_value += sum_of_cards
+            
             print(my_int_temp_value)
+            
             print(type(my_int_temp_value))
     
-    # Return is out of loop
     return sum_of_cards
 
 
