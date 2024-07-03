@@ -1,4 +1,4 @@
-import deck, blackjack
+import blackjack
 
 def main():
   blackjack.game_loop()

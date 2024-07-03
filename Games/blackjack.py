@@ -1,4 +1,4 @@
-from Games import deck
+import deck
 # Add an option to split the deck
 def player_options():
     print("1. Hit")
