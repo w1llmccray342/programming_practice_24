@@ -25,7 +25,7 @@ def find_sum_of_cards(ival, hand):
             
             # We use conditional statements to check and assign a value
            
-        if my_temp_value == "10" or ["J", "Q", "K"] in my_temp_value:
+        if my_temp_value == "10" or my_temp_value[0] in ["J", "Q", "K"]:
             my_int_temp_value = 10
            
         elif my_temp_value[0] == "A":
