@@ -80,3 +80,5 @@ def game_loop():
 
 
         # Conditions to end the game.
+    
+   

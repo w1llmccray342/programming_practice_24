@@ -1,7 +1,11 @@
-import deck
+import deck, blackjack
 
-deck.create_deck()
+def main():
+  blackjack.game_loop()
 
-deck.draw_card(2)
-deck.draw_card(3)
-deck.draw_card(-1)
+
+
+if __name__ == '__main__':
+ main()
+
+
