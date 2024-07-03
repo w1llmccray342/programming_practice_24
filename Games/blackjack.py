@@ -16,6 +16,7 @@ def find_sum_of_cards(ival, hand):
         for x in cards:
 
             my_temp_value = x[0:1]
+            
             print(my_temp_value)
             
             if "10" in my_temp_value:
@@ -24,12 +25,12 @@ def find_sum_of_cards(ival, hand):
             elif "J" in my_temp_value or "Q" in my_temp_value or "K" in my_temp_value:
                 my_int_temp_value = 10
            
-            elif my_temp_value[0] == "A":
+            elif my_temp_value[1] == "A":
                 # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
                 my_int_temp_value = 11
             
             else:
-                my_int_temp_value = int(my_temp_value[0])
+                my_int_temp_value = int(my_temp_value[1])
 
             my_int_temp_value += sum_of_cards
     
