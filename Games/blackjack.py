@@ -71,9 +71,9 @@ def game_loop():
         player_score += player_current_score
         ai_score += ai_current_score
 
-        print(f"Dealer has... {ai_hand}")
+        print(f"Dealer has a... {ai_hand[0]} and {ai_hand[1]}")
         print(f"Dealer is at {ai_score} score")
-        print(f"Player has...{player_hand}")
+        print(f"Player has...{player_hand[0]} and {player_hand[1]}")
         print(f"Player is at {player_score} score")
 
         game_running = False
