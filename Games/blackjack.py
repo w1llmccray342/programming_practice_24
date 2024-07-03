@@ -15,7 +15,7 @@ def find_sum_of_cards(ival, hand):
         # Extract the first element of Cards in this case the index of "0" should give us 6
         for x in cards:
 
-            my_temp_value = x[0:1]
+            my_temp_value = x[0:2]
             
             print(my_temp_value)
             
