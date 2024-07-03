@@ -76,6 +76,8 @@ def game_loop():
         print(f"Player has...{player_hand}")
         print(f"Player is at {player_score} score")
 
+        game_running = False
+
         # Handle options down here:
 
 
