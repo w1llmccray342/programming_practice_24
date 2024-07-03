@@ -11,18 +11,25 @@ def find_sum_of_cards(ival, hand):
     
     # Iterate through the list
     # Extract only the first element
+    # We are looking at BOTH string values
     for cards in hand:
         # Extract the first element of Cards in this case the index of "0" should give us 6
         print(cards)
         print(type(cards))
+
+        # We are looking at a SINGLE string value
         for x in cards:
             print(x)
             print(type(x))
 
-            my_temp_value = x[0:2]
+
+            # We splice that to the first 3 indicies
+            my_temp_value = x[::2]
+            my_int_temp_value = 0
             
             print(my_temp_value)
             
+            # We use conditional statements to check and assign a value
             if "10" in my_temp_value:
                 my_int_temp_value = 10
            
@@ -34,7 +41,7 @@ def find_sum_of_cards(ival, hand):
                 my_int_temp_value = 11
             
             else:
-                my_int_temp_value = int(my_temp_value[1])
+                my_int_temp_value = int(my_temp_value[0])
 
             my_int_temp_value += sum_of_cards
     
