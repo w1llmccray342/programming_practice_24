@@ -29,7 +29,7 @@ def find_sum_of_cards(ival, hand):
             elif "J" in my_temp_value or "Q" in my_temp_value or "K" in my_temp_value:
                 my_int_temp_value = 10
            
-            elif my_temp_value[1] == "A":
+            elif my_temp_value[0] == "A":
                 # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
                 my_int_temp_value = 11
             
