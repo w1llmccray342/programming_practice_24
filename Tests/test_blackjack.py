@@ -6,4 +6,4 @@ class Test_Config(unittest.TestCase):
         my_cards = ["2 Of Hearts', '3 Of Hearts"] 
         ival = 0
 
-        self.assertEqual(5, find_sum_of_cards(my_cards))
+        self.assertEqual(5, find_sum_of_cards(ival, my_cards))
