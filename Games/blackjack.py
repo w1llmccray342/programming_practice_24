@@ -44,7 +44,10 @@ def find_sum_of_cards(ival, hand):
                 my_int_temp_value = int(my_temp_value[0])
 
             my_int_temp_value += sum_of_cards
+            print(my_int_temp_value)
+            print(type(my_int_temp_value))
     
+    # Return is out of loop
     return sum_of_cards
 
 
