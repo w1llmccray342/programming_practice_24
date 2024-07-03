@@ -14,18 +14,24 @@ def find_sum_of_cards(ival, hand):
     for cards in hand:
         # Extract the first element of Cards in this case the index of "0" should give us 6
         for x in cards:
-            print(x[0])
+
+            my_temp_value = x[0:1]
+            print(my_temp_value)
             
-            if x[0:1] == "10":
-                my_temp_value = 10
-            elif x[0] == "J" or x[0] == "Q" or x[0] == "K":
-                my_temp_value = 10
-            elif x[0] == "A":
+            if "10" in my_temp_value:
+                my_int_temp_value = 10
+           
+            elif "J" in my_temp_value or "Q" in my_temp_value or "K" in my_temp_value:
+                my_int_temp_value = 10
+           
+            elif my_temp_value[0] == "A":
                 # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
-                my_temp_value = 11
+                my_int_temp_value = 11
+            
             else:
-                my_temp_value = int(x[0])
-            my_temp_value += sum_of_cards
+                my_int_temp_value = int(my_temp_value[0])
+
+            my_int_temp_value += sum_of_cards
     
     return sum_of_cards
 
