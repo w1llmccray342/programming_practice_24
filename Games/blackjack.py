@@ -13,7 +13,9 @@ def find_sum_of_cards(ival, hand):
     # Extract only the first element
     for cards in hand:
         # Extract the first element of Cards in this case the index of "0" should give us 6
+        print(cards)
         for x in cards:
+            print(x)
 
             my_temp_value = x[0:2]
             
