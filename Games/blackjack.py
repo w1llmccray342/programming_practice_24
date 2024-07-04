@@ -97,27 +97,30 @@ def game_loop():
 
             while first_draw == True:
                 player_hand = Deck.draw_card(game_deck, 1)
-                print(player_hand[0])
+                print(player_hand[0:1])
                 print("Game deck has", (len(x) for x in game_deck), "cards left!")
+                
+                # Breaks at this point but what is the reason for it?
+                # List index is out of range
                 ai_hand = Deck.draw_card(game_deck, 1)
                 break
 
-        player_current_score = find_sum_of_cards(player_score, player_hand)
-        ai_current_score = find_sum_of_cards(ai_score, ai_hand)
+            player_current_score = find_sum_of_cards(player_score, player_hand)
+            ai_current_score = find_sum_of_cards(ai_score, ai_hand)
 
-        player_score += player_current_score
-        ai_score += ai_current_score
+            player_score += player_current_score
+            ai_score += ai_current_score
 
-        print(f"Dealer has a... {ai_hand[0]} and {ai_hand[1]}")
-        print(f"Dealer is at {ai_score} score.")
-        print(f"Player has...{player_hand[0]} and {player_hand[1]}")
-        print(f"Player is at {player_score} score.")
+            print(f"Dealer has a... {ai_hand[0]} and {ai_hand[1]}")
+            print(f"Dealer is at {ai_score} score.")
+            print(f"Player has...{player_hand[0]} and {player_hand[1]}")
+            print(f"Player is at {player_score} score.")
 
-        print("What would you like to do?")
-        player_options()
+            print("What would you like to do?")
+            player_options()
 
 
-        game_running = False
+            game_running = False
     
 
 
