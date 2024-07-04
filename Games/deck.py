@@ -64,7 +64,7 @@ class Deck:
 
                 # Remove drawn cards from list.
    
-                del(new_deck[my_draw][my_second_draw]) 
+                # del(new_deck[my_draw][my_second_draw]) 
                 
                 print(new_deck) #Should print out nothing
                 print(drawn_cards)
