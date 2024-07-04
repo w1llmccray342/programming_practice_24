@@ -22,6 +22,7 @@ def find_sum_of_cards(ival, hand):
             # We splice that to the
         my_temp_value = cards[0]
         my_int_temp_value = 0
+        print(my_temp_value[0])
 
         my_extract_value = my_temp_value.split([0])
             
@@ -100,8 +101,6 @@ def game_loop():
         game_deck = deck.create_deck()
     
         while game_running:
-
-        
 
 
             if first_draw:
