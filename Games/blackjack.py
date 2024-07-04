@@ -22,20 +22,22 @@ def find_sum_of_cards(ival, hand):
             # We splice that to the
         my_temp_value = cards[0]
         my_int_temp_value = 0
+
+        my_extract_value = my_temp_value.split([0])
             
         print(my_temp_value)
             
             # We use conditional statements to check and assign a value
            
-        if my_temp_value == "10" or my_temp_value[0] in ["J", "Q", "K"]:
+        if my_extract_value == "10" or my_extract_value[0] in ["J", "Q", "K"]:
             my_int_temp_value = 10
            
-        elif my_temp_value[0] == "A":
+        elif my_extract_value[0] == "A":
                 # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
             det_ace_best_value()
             
         else:
-            my_int_temp_value = int(my_temp_value[0])
+            my_int_temp_value = int(my_extract_value[0])
 
         sum_of_cards += my_int_temp_value
             
