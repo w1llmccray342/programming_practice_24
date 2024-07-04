@@ -57,7 +57,7 @@ class Deck:
                 print(my_draw, my_second_draw)
                 print(new_deck[my_draw][my_second_draw])
                 
-                if (new_deck[my_draw][my_second_draw]) in deck:
+                if (new_deck[my_draw][my_second_draw]) in new_deck:
                     
                     # Add drawn cards to list if in range
                     drawn_cards.append(new_deck[my_draw][my_second_draw])
@@ -65,9 +65,6 @@ class Deck:
 
                     print(drawn_cards)
 
-                # Remove drawn cards from list.
-   
-                # d
                 
                 print(new_deck) #Should print out nothing
                 print(drawn_cards)
