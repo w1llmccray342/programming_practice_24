@@ -51,16 +51,13 @@ class Deck:
 
 
         while i < nums:
-
             my_draw = random.randint(0, 3)
             my_second_draw = random.randint(0, 12)
 
-            for card in range(nums):
-
-                if card in new_deck:
-                    removed_cards.append(new_deck[my_draw][my_second_draw])
-                    drawn_cards.append(new_deck[my_draw][my_second_draw])
-                    del(new_deck[my_draw][my_second_draw]) 
+            for i in range(nums):
+                removed_cards.append(new_deck[my_draw][my_second_draw])
+                drawn_cards.append(new_deck[my_draw][my_second_draw])
+                del(new_deck[my_draw][my_second_draw]) 
 
                 
                 
