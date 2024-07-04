@@ -61,5 +61,5 @@ class Deck:
 
 
             print(drawn_cards)
-            print(deck)
+            print(deck[my_draw][my_second_draw]) #Should print out nothing
             return drawn_cards, deck
