@@ -43,37 +43,24 @@ class Deck:
 
         # Need to see if deck is empty, if it is, we make another deck.
         # Can probably just reset the state of the game though to make this easier.
-        i = 0
 
         drawn_cards = []
         removed_cards = []
         new_deck = deck
 
+        for _ in range(nums):
+            if all(len(suit) == 0 for suit in new_deck):
+                new_deck =  Deck.create_deck()
 
-        while i <= nums and not i > nums:
+            my_draw = random.randint(0, 3)
+            while len(new_deck[my_draw]) ==  0:
+                my_draw = random.randint(0,3) 
+            my_second_draw = random.randint(0, len(new_deck[my_draw]) - 1)
 
-             my_draw = random.randint(0, 3)
-             my_second_draw = random.randint(0, 12)
+            drawn_card = new_deck[my_draw][my_second_draw]
+            new_deck[my_draw].remove(drawn_card)
+            drawn_cards.append(drawn_card)
 
-             drawn_card = new_deck[my_draw][my_second_draw]
 
-             if drawn_card in new_deck:
-                 print("Drawn card is in deck")
-             else:
-                 print("Drawn card isn't in deck!")
-
-             while drawn_card == new_deck[my_draw][my_second_draw]:
-     
-                for x in range(nums):
-                    removed_cards.append(drawn_card)
-                    drawn_cards.append(drawn_card)
-                    del(drawn_card) 
-            
-                
-                
-             print(new_deck) #Should print out nothing
-             print(drawn_cards)
-             print(f"Here are the removed cards: {removed_cards}")
-
-             i += 1    
-        return drawn_cards, list(new_deck)
+            print(drawn_cards, "Was removed from the deck!")
+            print(new_deck)

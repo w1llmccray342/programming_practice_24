@@ -85,19 +85,26 @@ def game_loop():
     # Deck should draw the first card it sees and assign it to player.
     game_running = True
 
-    # Fn to determine if deck is empty
-   
     player_score = 0
     ai_score = 0
+
+    # Fn to determine if deck is empty
+   
+
     my_deck_is_empty = True
     first_draw = True
 
     if my_deck_is_empty == True:
-        game_deck = Deck.create_deck()
-        while game_running == True:
+       
+        deck = Deck()
+        game_deck = deck.create_deck()
+    
+        while game_running:
+
+        
 
 
-            while first_draw == True:
+            if first_draw:
                 player_hand = Deck.draw_card(game_deck, 2)
                 print(player_hand[0:1])
                 print("Game deck has", (len(x) for x in game_deck), "cards left!")
@@ -105,13 +112,12 @@ def game_loop():
                 # Breaks at this point but what is the reason for it?
                 # List index is out of range
                 ai_hand = Deck.draw_card(game_deck, 2)
-                break
+                first_draw == False
 
-            player_current_score = find_sum_of_cards(player_score, player_hand)
-            ai_current_score = find_sum_of_cards(ai_score, ai_hand)
+            player_score = find_sum_of_cards(player_score, player_hand)
+            ai_score = find_sum_of_cards(ai_score, ai_hand)
 
-            player_score += player_current_score
-            ai_score += ai_current_score
+     
 
             print(f"Dealer has a... {ai_hand[0]} and {ai_hand[1]}")
             print(f"Dealer is at {ai_score} score.")
