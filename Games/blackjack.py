@@ -1,14 +1,14 @@
 from deck import *
 # Add an option to split the deck
 
-def det_ace_best_value(score):
+def det_ace_best_value(ival):
     pass
 
 def ante(chips):
     pass
 
 # This will break on a second loop as it resets sum_of_cards, we need to take an initial value
-def find_sum_of_cards(ival, hand):
+def find_sum_of_cards(ival, hand, score):
     sum_of_cards = ival
     
     # Iterate through the list
@@ -35,7 +35,7 @@ def find_sum_of_cards(ival, hand):
            
         elif my_extract_value[0] == "A":
                 # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
-            det_ace_best_value()
+            det_ace_best_value(ival)
             
         else:
             my_int_temp_value = int(my_extract_value[0])
