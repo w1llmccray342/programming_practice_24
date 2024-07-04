@@ -57,6 +57,11 @@ class Deck:
 
              drawn_card = (new_deck[my_draw][my_second_draw])
 
+             if drawn_card in new_deck:
+                 print("Drawn card is in deck")
+             else:
+                 print("Drawn card isn't in deck!")
+
              while drawn_card in new_deck:
      
                 for my_draw in range(nums):
