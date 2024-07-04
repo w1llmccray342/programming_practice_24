@@ -62,10 +62,10 @@ class Deck:
 
                     print(drawn_cards)
 
-                    # Remove drawn cards from list.
-                    del(new_deck[my_draw][my_second_draw]) 
-
+                # Remove drawn cards from list.
+                   
+                del(new_deck[my_draw][my_second_draw]) 
                 
-                print(deck) #Should print out nothing
+                print(new_deck) #Should print out nothing
             
             return drawn_cards, new_deck
