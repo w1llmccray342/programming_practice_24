@@ -20,7 +20,9 @@ class Deck:
 
         default_deck.append(default_list)    
 
+        print(default_deck)
         return default_deck
+    
 
     def game_active():
         game_on = True
