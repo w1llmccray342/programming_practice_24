@@ -11,6 +11,6 @@ class Test_Config(unittest.TestCase):
         draw_card_res_2 = Deck.draw_card(my_deck, 1)
         draw_card_res_3 = Deck.draw_card(my_deck, -1)
 
-        self.assertEqual(True, Deck.draw_card(my_deck, 2) == type(list))
-        self.assertEqual(True, Deck.draw_card(my_deck, 1) == type(list))
-        self.assertEqual(False, Deck.draw_card(my_deck, -1) == type(list))
+        self.assertEqual(True, draw_card_res == type(list))
+        self.assertEqual(True, draw_card_res_2 == type(list))
+        self.assertEqual(False, draw_card_res_3 == type(list))
