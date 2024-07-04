@@ -62,5 +62,6 @@ class Deck:
                 
             print(new_deck) #Should print out nothing
             print(drawn_cards)
+            print(f"Here are the removed cards: {removed_cards}")
             
             return drawn_cards, new_deck
