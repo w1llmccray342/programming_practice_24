@@ -51,20 +51,23 @@ class Deck:
 
 
         while i <= nums and not i > nums:
-            my_draw = random.randint(0, 3)
-            my_second_draw = random.randint(0, 12)
 
-            for i in range(nums):
-                removed_cards.append(new_deck[my_draw][my_second_draw])
-                drawn_cards.append(new_deck[my_draw][my_second_draw])
-                del(new_deck[my_draw][my_second_draw]) 
+             my_draw = random.randint(0, 3)
+             my_second_draw = random.randint(0, 12)
+
+             while new_deck([my_draw][my_second_draw]) not in new_deck:
+               
+                
+                for my_draw in range(nums):
+                    removed_cards.append(new_deck[my_draw][my_second_draw])
+                    drawn_cards.append(new_deck[my_draw][my_second_draw])
+                    del(new_deck[my_draw][my_second_draw]) 
 
                 
                 
-            print(new_deck) #Should print out nothing
-            print(drawn_cards)
-            print(f"Here are the removed cards: {removed_cards}")
+             print(new_deck) #Should print out nothing
+             print(drawn_cards)
+             print(f"Here are the removed cards: {removed_cards}")
 
-            i += 1    
-        
+             i += 1    
         return drawn_cards, list(new_deck)
