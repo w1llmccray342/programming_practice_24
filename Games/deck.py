@@ -70,4 +70,4 @@ class Deck:
 
             i += 1    
         
-        return drawn_cards, new_deck
+        return drawn_cards, list(new_deck)
