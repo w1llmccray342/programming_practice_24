@@ -55,10 +55,12 @@ class Deck:
             my_second_draw = random.randint(0, 12)
 
             for card in range(nums):
-                removed_cards.append(new_deck[my_draw][my_second_draw])
 
-                drawn_cards.append(new_deck[my_draw][my_second_draw])
-                del(new_deck[my_draw][my_second_draw]) 
+                if card in range(new_deck):
+                    removed_cards.append(new_deck[my_draw][my_second_draw])
+
+                    drawn_cards.append(new_deck[my_draw][my_second_draw])
+                    del(new_deck[my_draw][my_second_draw]) 
                 
                 
             print(new_deck) #Should print out nothing
