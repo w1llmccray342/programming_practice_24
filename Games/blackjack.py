@@ -48,18 +48,35 @@ def find_sum_of_cards(ival, hand):
     
     return sum_of_cards
 
+def my_stats(w, x, y, z):
+    print(f"Dealer has a... {x[0]} and {x[1]}")
+    print(f"Dealer is at {w} score.")
+    print(f"Player has...{y[0]} and {y[1]}")
+    print(f"Player is at {z} score.")
+    print("What would you like to do?")
 
-def player_options_handler():
-    player_option = 0
 
-    player_option = input("Please select one of the following options listed: ")
+
+
+def player_options_handler(deck, w, x, y, z, game_running):
+
+    inner_game_running = True
+
+
+    while inner_game_running:
+        my_stats(w, x, y, z, deck)
+
+        player_options()
+
+
     
-    if player_option == 1:
-        hit_fn()
-    elif player_option == 2: 
-        stand_fn()
-    elif player_option == 3:
-        double_down_fn()
+        player_option = input("Please select one of the following options listed: ")
+        if player_option == 1:
+            hit_fn(deck)
+        elif player_option == 2: 
+            stand_fn(deck)
+        elif player_option == 3:
+            double_down_fn(deck)
 
 
 def player_options():
@@ -67,16 +84,19 @@ def player_options():
     print("2. Stand")
     print("3. Double Down")
 
-    player_options_handler()
 
-def hit_fn(deck, nums):
+# Player hits the desired number of times
+def hit_fn(deck):
     pass
     
-
-def stand_fn():
+# Player can no longer hit AI is forced to hit.
+def stand_fn(deck):
     pass
 
-def double_down_fn():
+# Player doubles down ANTE for a single card, call hit fn once here and append that to player_score
+def double_down_fn(deck):
+    hit_fn(deck)
+
     pass
 
 
@@ -90,7 +110,6 @@ def game_loop():
     ai_score = 0
 
     # Fn to determine if deck is empty
-   
 
     my_deck_is_empty = True
     first_draw = True
@@ -101,7 +120,6 @@ def game_loop():
         game_deck = deck.create_deck()
     
         while game_running:
-
 
             if first_draw:
                 player_hand = deck.draw_card(game_deck, 2)
@@ -118,21 +136,15 @@ def game_loop():
             player_hand = list(player_hand[0])
             ai_hand = list(ai_hand[0])
 
+
+            # Turn this to a function
             player_score = find_sum_of_cards(player_score, player_hand)
             ai_score = find_sum_of_cards(ai_score, ai_hand)
 
-     
+            player_options_handler(game_deck, ai_hand, ai_score, player_hand, player_score, game_running)
 
-            print(f"Dealer has a... {ai_hand[0]} and {ai_hand[1]}")
-            print(f"Dealer is at {ai_score} score.")
-            print(f"Player has...{player_hand[0]} and {player_hand[1]}")
-            print(f"Player is at {player_score} score.")
+            
 
-            print("What would you like to do?")
-            player_options()
-
-
-            game_running = False
     
 
 
