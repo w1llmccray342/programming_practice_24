@@ -64,7 +64,7 @@ class Deck:
 
              while drawn_card == new_deck[my_draw][my_second_draw]:
      
-                for my_draw in range(nums):
+                for x in range(nums):
                     removed_cards.append(drawn_card)
                     drawn_cards.append(drawn_card)
                     del(drawn_card) 
