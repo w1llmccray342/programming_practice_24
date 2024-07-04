@@ -57,7 +57,7 @@ class Deck:
 
             for card in range(nums):
 
-                if card in range(list(new_deck)):
+                if card in range(len(new_deck)):
                     removed_cards.append(new_deck[my_draw][my_second_draw])
 
                     drawn_cards.append(new_deck[my_draw][my_second_draw])
