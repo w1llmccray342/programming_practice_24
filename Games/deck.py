@@ -50,7 +50,7 @@ class Deck:
         new_deck = deck
 
 
-        while i < nums:
+        while i <= nums and not i > nums:
             my_draw = random.randint(0, 3)
             my_second_draw = random.randint(0, 12)
 
