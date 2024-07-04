@@ -62,7 +62,7 @@ class Deck:
              else:
                  print("Drawn card isn't in deck!")
 
-             while drawn_card in new_deck:
+             while drawn_card == (new_deck[my_draw][my_second_draw]):
      
                 for my_draw in range(nums):
                     removed_cards.append(drawn_card)
