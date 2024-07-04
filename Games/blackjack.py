@@ -1,4 +1,4 @@
-from deck import Deck
+from .deck import *
 # Add an option to split the deck
 
 def det_ace_best_value(score):
