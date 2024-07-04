@@ -20,7 +20,6 @@ class Deck:
              default_list.append(temp_value)
          default_deck.append(default_list)    
 
-        print(default_deck)
         return default_deck
     
 
@@ -61,7 +60,7 @@ class Deck:
                 del(new_deck[my_draw][my_second_draw]) 
                 
                 
-                print(new_deck) #Should print out nothing
-                print(drawn_cards)
+            print(new_deck) #Should print out nothing
+            print(drawn_cards)
             
             return drawn_cards, new_deck
