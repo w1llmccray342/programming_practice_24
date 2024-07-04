@@ -57,14 +57,11 @@ class Deck:
 
             for card in range(nums):
 
-                if new_deck[my_draw][my_second_draw] in new_deck:
-                    try:
-                        removed_cards.append(new_deck[my_draw][my_second_draw])
-                        drawn_cards.append(new_deck[my_draw][my_second_draw])
-                        del(new_deck[my_draw][my_second_draw]) 
-                    except:
-                        IndexError
-                        raise("Index is out of range please try again with larger index")
+                if card in new_deck:
+                    removed_cards.append(new_deck[my_draw][my_second_draw])
+                    drawn_cards.append(new_deck[my_draw][my_second_draw])
+                    del(new_deck[my_draw][my_second_draw]) 
+
                 
                 
             print(new_deck) #Should print out nothing
