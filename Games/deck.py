@@ -48,6 +48,7 @@ class Deck:
         while True:
 
             drawn_cards = []
+            new_deck = deck
 
             print(deck)
 
@@ -59,13 +60,9 @@ class Deck:
                 drawn_cards.append(deck[my_draw][my_second_draw])   
 
             # Remove drawn cards from list.
-                drawn_cards.remove(deck[my_draw][my_second_draw])
+                new_deck.remove([my_draw][my_second_draw])
 
                 print(drawn_cards)
-                print(deck[my_draw][my_second_draw]) #Should print out nothing
-
-           
-
-
+                print(deck) #Should print out nothing
             
             return drawn_cards, deck
