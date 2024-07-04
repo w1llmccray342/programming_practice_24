@@ -54,6 +54,8 @@ class Deck:
             my_second_draw = random.randint(0, 12)
 
             for card in range(nums):
+                print(my_draw, my_second_draw)
+                print(new_deck[my_draw][my_second_draw])
                 
                 if new_deck[my_draw][my_second_draw] in deck:
                     
