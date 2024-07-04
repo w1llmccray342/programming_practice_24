@@ -52,17 +52,19 @@ class Deck:
 
             print(deck)
 
+            my_draw = 0
+            my_second_draw = 0
+
             for card in range(nums):
+
                 
-                while [my_draw, my_second_draw] not in range(deck):
+                while [my_draw, my_second_draw] in range(deck):
                     my_draw = random.randint(0, 3)
                     my_second_draw = random.randint(0, 12)
 
                     # Add drawn cards to list if in range
                     drawn_cards.append(deck[my_draw][my_second_draw])  
 
-                 
-                 
 
             # Remove drawn cards from list.
                 del(new_deck[my_draw][my_second_draw])
