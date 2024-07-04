@@ -58,14 +58,12 @@ class Deck:
              drawn_card = (new_deck[my_draw][my_second_draw])
 
              while drawn_card in new_deck:
-
-                try:        
-                    for my_draw in range(nums):
-                        removed_cards.append(drawn_card)
-                        drawn_cards.append(drawn_card)
-                        del(drawn_card) 
-                except:
-                    ValueError
+     
+                for my_draw in range(nums):
+                    removed_cards.append(drawn_card)
+                    drawn_cards.append(drawn_card)
+                    del(drawn_card) 
+            
                 
                 
              print(new_deck) #Should print out nothing
