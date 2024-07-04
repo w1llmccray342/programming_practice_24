@@ -60,7 +60,7 @@ class Deck:
                 drawn_cards.append(deck[my_draw][my_second_draw])   
 
             # Remove drawn cards from list.
-                new_deck.remove([my_draw][my_second_draw])
+                del(new_deck[my_draw][my_second_draw])
 
                 print(drawn_cards)
                 print(deck) #Should print out nothing
