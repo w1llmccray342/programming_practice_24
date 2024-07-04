@@ -14,9 +14,11 @@ class Deck:
 
         for suit in default_suits:
          default_list = []
-        for value in default_values:
+
+         for value in default_values:
             temp_value = (f"{value} Of {suit}")
             default_list.append(temp_value)
+                
 
         default_deck.append(default_list)    
 
