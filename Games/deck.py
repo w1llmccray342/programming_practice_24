@@ -61,11 +61,13 @@ class Deck:
                     # Add drawn cards to list if in range
                     drawn_cards.append(deck[my_draw][my_second_draw]) 
 
+                    print(drawn_cards)
+
                     # Remove drawn cards from list.
                     del(new_deck[my_draw][my_second_draw]) 
 
 
-                print(drawn_cards)
+                
                 print(deck) #Should print out nothing
             
-            return drawn_cards, deck
+            return drawn_cards, new_deck
