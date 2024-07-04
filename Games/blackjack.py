@@ -96,7 +96,7 @@ def game_loop():
 
     if my_deck_is_empty == True:
        
-        deck = Deck()
+        deck = Deck
         game_deck = deck.create_deck()
     
         while game_running:
