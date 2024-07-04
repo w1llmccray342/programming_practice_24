@@ -69,7 +69,7 @@ def player_options():
 
     player_options_handler()
 
-def hit_fn():
+def hit_fn(deck, nums):
     pass
     
 
@@ -114,6 +114,9 @@ def game_loop():
                 # List index is out of range
                 ai_hand = deck.draw_card(game_deck, 2)
                 first_draw = False
+
+            player_hand = list(player_hand[0])
+            ai_hand = list(ai_hand[0])
 
             player_score = find_sum_of_cards(player_score, player_hand)
             ai_score = find_sum_of_cards(ai_score, ai_hand)
