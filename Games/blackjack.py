@@ -1,4 +1,4 @@
-import deck
+from deck import Deck
 # Add an option to split the deck
 
 def det_ace_best_value(score):
@@ -91,7 +91,7 @@ def game_loop():
     first_draw = True
 
     if my_deck_is_empty == True:
-        game_deck = deck.Deck.create_deck()
+        game_deck = Deck.create_deck()
         while game_running == True:
 
 
