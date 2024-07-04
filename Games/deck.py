@@ -55,16 +55,17 @@ class Deck:
 
             for card in range(nums):
                 
-                while (new_deck[my_draw][my_second_draw]) in deck:
+                if new_deck[my_draw][my_second_draw] in deck:
                     
                     # Add drawn cards to list if in range
-                    drawn_cards.append(new_deck[my_draw][my_second_draw]) 
+                    drawn_cards.append(new_deck[my_draw][my_second_draw])
+                    del(new_deck[my_draw][my_second_draw])  
 
                     print(drawn_cards)
 
                 # Remove drawn cards from list.
    
-                # del(new_deck[my_draw][my_second_draw]) 
+                # d
                 
                 print(new_deck) #Should print out nothing
                 print(drawn_cards)
