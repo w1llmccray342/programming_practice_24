@@ -45,18 +45,19 @@ class Deck:
         # Can probably just reset the state of the game though to make this easier.
         i = 0
 
-        while i < nums:
+        drawn_cards = []
+        removed_cards = []
+        new_deck = deck
 
-            drawn_cards = []
-            removed_cards = []
-            new_deck = deck
+
+        while i < nums:
 
             my_draw = random.randint(0, 3)
             my_second_draw = random.randint(0, 12)
 
             for card in range(nums):
 
-                if card in range(new_deck):
+                if card in range(list(new_deck)):
                     removed_cards.append(new_deck[my_draw][my_second_draw])
 
                     drawn_cards.append(new_deck[my_draw][my_second_draw])
