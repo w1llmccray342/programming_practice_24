@@ -66,4 +66,4 @@ class Deck:
             print(new_deck)
         
         print(drawn_cards, "Were removed from the deck!")
-        return drawn_cards, list(new_deck)
+        return drawn_cards, new_deck
