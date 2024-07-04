@@ -98,7 +98,7 @@ def game_loop():
             while first_draw == True:
                 player_hand = Deck.draw_card(game_deck, 2)
                 ai_hand = Deck.draw_card(game_deck, 2)
-                first_draw = False
+                break
 
         player_current_score = find_sum_of_cards(player_score, player_hand)
         ai_current_score = find_sum_of_cards(ai_score, ai_hand)
