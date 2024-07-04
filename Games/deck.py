@@ -43,8 +43,9 @@ class Deck:
 
         # Need to see if deck is empty, if it is, we make another deck.
         # Can probably just reset the state of the game though to make this easier.
+        i = 0
 
-        while True:
+        while i < nums:
 
             drawn_cards = []
             removed_cards = []
@@ -63,5 +64,7 @@ class Deck:
             print(new_deck) #Should print out nothing
             print(drawn_cards)
             print(f"Here are the removed cards: {removed_cards}")
+
+            i += 1
             
             return drawn_cards, new_deck
