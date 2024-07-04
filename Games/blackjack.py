@@ -64,7 +64,7 @@ def player_options_handler(deck, w, x, y, z, game_running):
 
 
     while inner_game_running:
-        my_stats(w, x, y, z, deck)
+        my_stats(w, x, y, z)
 
         player_options()
 
