@@ -97,6 +97,7 @@ def game_loop():
 
             while first_draw == True:
                 player_hand = Deck.draw_card(game_deck, 2)
+                print("Game deck has", len(game_deck), "cards left!")
                 ai_hand = Deck.draw_card(game_deck, 2)
                 break
 
