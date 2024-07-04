@@ -54,7 +54,6 @@ class Deck:
             my_second_draw = random.randint(0, 12)
 
             for card in range(nums):
-
                 
                 while (deck[my_draw][my_second_draw]) in deck:
                     
@@ -65,7 +64,6 @@ class Deck:
 
                     # Remove drawn cards from list.
                     del(new_deck[my_draw][my_second_draw]) 
-
 
                 
                 print(deck) #Should print out nothing
