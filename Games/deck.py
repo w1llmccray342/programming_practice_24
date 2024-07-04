@@ -50,8 +50,6 @@ class Deck:
             drawn_cards = []
             new_deck = deck
 
-            print(deck)
-
             my_draw = random.randint(0, 3)
             my_second_draw = random.randint(0, 12)
 
@@ -61,11 +59,11 @@ class Deck:
                 while (deck[my_draw][my_second_draw]) in deck:
                     
                     # Add drawn cards to list if in range
-                    drawn_cards.append(deck[my_draw][my_second_draw])  
+                    drawn_cards.append(deck[my_draw][my_second_draw]) 
 
+                    # Remove drawn cards from list.
+                    del(new_deck[my_draw][my_second_draw]) 
 
-            # Remove drawn cards from list.
-                del(new_deck[my_draw][my_second_draw])
 
                 print(drawn_cards)
                 print(deck) #Should print out nothing
