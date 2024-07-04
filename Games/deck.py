@@ -55,14 +55,14 @@ class Deck:
              my_draw = random.randint(0, 3)
              my_second_draw = random.randint(0, 12)
 
-             drawn_card = (new_deck[my_draw][my_second_draw])
+             drawn_card = new_deck[my_draw][my_second_draw]
 
              if drawn_card in new_deck:
                  print("Drawn card is in deck")
              else:
                  print("Drawn card isn't in deck!")
 
-             while drawn_card == (new_deck[my_draw][my_second_draw]):
+             while drawn_card == new_deck[my_draw][my_second_draw]:
      
                 for my_draw in range(nums):
                     removed_cards.append(drawn_card)
