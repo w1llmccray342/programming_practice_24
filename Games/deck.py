@@ -47,14 +47,14 @@ class Deck:
         while True:
 
             drawn_cards = []
+            removed_cards = []
             new_deck = deck
 
             my_draw = random.randint(0, 3)
             my_second_draw = random.randint(0, 12)
 
             for card in range(nums):
-                print(my_draw, my_second_draw)
-                print(new_deck[my_draw][my_second_draw])
+                removed_cards.append(new_deck[my_draw][my_second_draw])
 
                 drawn_cards.append(new_deck[my_draw][my_second_draw])
                 del(new_deck[my_draw][my_second_draw]) 
