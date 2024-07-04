@@ -107,14 +107,14 @@ def game_loop():
             if first_draw:
                 player_hand = deck.draw_card(game_deck, 2)
                 print(type(player_hand))
-                
+
                 print(player_hand[0:1])
                 print("Game deck has", (len(x) for x in game_deck), "cards left!")
                 
                 # Breaks at this point but what is the reason for it?
                 # List index is out of range
                 ai_hand = deck.draw_card(game_deck, 2)
-                first_draw == False
+                first_draw = False
 
             player_score = find_sum_of_cards(player_score, player_hand)
             ai_score = find_sum_of_cards(ai_score, ai_hand)
