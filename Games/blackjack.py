@@ -1,5 +1,6 @@
 from deck import *
 import os
+import sys
 # Add an option to split the deck
 
 def det_ace_best_value(ival):
@@ -164,6 +165,8 @@ def split(deck):
 
 # Blackjack game loop, player should have 21 to win.
 def game_loop():
+
+    sys.stdout = open('/Desktop/Logs/Log.txt')
     # Deck should draw the first card it sees and assign it to player.
     game_running = True
 
