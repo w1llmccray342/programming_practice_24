@@ -1,5 +1,5 @@
 import unittest
-from Games.blackjack import *
+from Games.blackjack import find_sum_of_cards, det_ace_best_value
 class Test_Config(unittest.TestCase):
 
     def test_blackjack_sum_of_cards(self):
