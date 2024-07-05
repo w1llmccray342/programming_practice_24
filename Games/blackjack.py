@@ -2,7 +2,7 @@ from deck import *
 import os
 import sys
 # Add an option to split the deck
-sys.stdout = open('C:/Users/Scrin/OneDrive/Desktop/Logs/log.txt', 'w')
+
 
 
 def det_ace_best_value(ival):
@@ -78,46 +78,47 @@ def my_stats(w, x, y, z):
 
 
 
-def player_options_handler(score_ai, score_human, ai_hand, player_hand, player_chips):
+def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, chips):
 
     inner_game_running = True
-    os.system("clear")
-
-    print(ai_hand, player_hand)
-
-    my_stats(score_ai, score_human, ai_hand, player_hand)
+   
 
     game_deck = create_deck_blackjack()
 
     while inner_game_running:
-        #my_stats()
+
+        os.system("clear")
+
+        print(ai_hand, player_hand)
+
+        my_stats(score_ai, score_human, ai_hand, player_hand)
 
         player_options()
     
         player_option = input("Please select one of the following options listed: ")
         
-        # We need another conditional statement to determine what we should be using for our options on each hand.
+        # We need another conditional statement to determine what we should be using for our options on each hand. If we see certain cards we should split accordingly. Hit, stand, double down, and split are always available
         # Do all player moves here.
         # Do all ai mvoes here
         if player_option == 1:
             os.system("clear")
-            pass
+            player_hand = hit_fn(deck, player_hand)
+            score_human = find_sum_of_cards(score_human, player_hand)
         elif player_option == 2: 
             os.system("clear")
             stand_fn()
         elif player_option == 3:
             os.system("clear")
-            double_down_fn(player_chips)
+            double_down_fn(chips)
         
         inner_game_running = continue_op()
-
-
 
 
 def player_options():
     print("1. Hit")
     print("2. Stand")
     print("3. Double Down")
+    print("4. Split")
 
 def create_deck_blackjack():
     deck = Deck
@@ -125,26 +126,37 @@ def create_deck_blackjack():
 
     return game_deck
 
+def check_scores_set_win(game_state, ai_score, player_score):
+    player_win = False
+    ai_win = False
+    game_over = game_state
 
-# # Player hits the desired number of times
-# def hit_fn(first_hand, score):
-    
-#     game_deck = create_deck_blackjack()
-#     first_hand = True
+    if ai_score > player_score and not ai_score > 21 and not ai_score == 21:
+        print("The house always wins!")
+        ai_win = True
+  
+    elif ai_score < player_score and not player_score > 21 and not player_score == 21:
+        print("Heey that's what we like to see")
+        player_win = True
 
-#     if first_hand:
-#         x = 2
-#         first_hand = False
-    
-#     else: 
-#         x = 1
-    
-#     my_draw = Deck.draw_card(x, game_deck)
-#     my_score = find_sum_of_cards(score, my_draw)
-#     print(my_draw, my_score)
+    elif ai_score == 21:
+        print("Tough luck.")
+        ai_win = True
 
-#     return my_draw, my_score, first_hand
+    elif player_score == 21:
+        print("Blackjack! You win!")
+        player_win = False
+
+    return player_win, ai_win, game_over
+
     
+
+# Player hits the desired number of times
+def hit_fn(deck, hand):
+    
+    new_card = Deck.draw_card(deck, 1)[0]
+    hand.append(new_card)
+    return hand   
    
 
 
@@ -209,11 +221,8 @@ def game_loop():
         player_score = find_sum_of_cards(player_score, player_hand)
         ai_score = find_sum_of_cards(ai_score, ai_hand)
 
-        player_options_handler(ai_score, player_score, ai_hand, player_hand, player_chips)
+        player_options_handler(game_deck, ai_score, player_score, ai_hand, player_hand, player_chips)
         
-        sys.stdout.close()
-        sys.stdout = sys.__stdout__
-
 
 
             
