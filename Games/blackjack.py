@@ -64,7 +64,7 @@ def find_sum_of_cards(ival, hand):
 
 
 
-def player_options_handler(score_ai, score_human):
+def player_options_handler(score_ai, score_human, player_chips):
 
     inner_game_running = True
     os.system("cls")
@@ -186,7 +186,7 @@ def game_loop():
         player_score = find_sum_of_cards(player_score, player_hand)
         ai_score = find_sum_of_cards(ai_score, ai_hand)
 
-        player_options_handler(game_deck, ai_hand, ai_score, player_hand, player_score, game_running)
+        player_options_handler(ai_score, player_score, player_chips)
 
 
 
