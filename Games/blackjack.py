@@ -201,7 +201,7 @@ def game_loop():
         player_score = find_sum_of_cards(player_score, player_hand)
         ai_score = find_sum_of_cards(ai_score, ai_hand)
 
-        player_options_handler(ai_score, player_score, player_chips)
+        player_options_handler(ai_score, player_score, ai_hand, player_hand, player_chips)
 
 
 
