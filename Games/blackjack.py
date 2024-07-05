@@ -158,7 +158,6 @@ def game_loop():
     
     while game_running:
 
-        deck = Deck()
         game_deck = create_deck_blackjack()
 
         first_draw = True
@@ -169,7 +168,7 @@ def game_loop():
             first_draw = False
         x = 1
 
-        player_hand = deck.draw_card(game_deck, x)
+        player_hand = Deck.draw_card(x, game_deck)
         print(game_deck)
         print(type(player_hand))
         print(player_hand[0:1])
@@ -177,7 +176,7 @@ def game_loop():
                 
                 # Breaks at this point but what is the reason for it?
                 # List index is out of range
-        ai_hand = deck.draw_card(game_deck, x)
+        ai_hand = Deck.draw_card(x, game_deck)
 
         player_hand = list(player_hand[0])
         ai_hand = list(ai_hand[0])
