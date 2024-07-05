@@ -129,6 +129,9 @@ def game_loop():
     # Deck should draw the first card it sees and assign it to player.
     game_running = True
 
+    # Chips to start with
+    player_chips = 400
+
     player_score = 0
     ai_score = 0
 
