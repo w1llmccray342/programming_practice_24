@@ -64,7 +64,7 @@ def my_stats(w, x, y, z):
 
 
 
-def player_options_handler(w):
+def player_options_handler(score_ai, score_human):
 
     inner_game_running = True
     system('cls')
@@ -102,7 +102,7 @@ def create_deck_blackjack():
 
 
 # Player hits the desired number of times
-def hit_fn(w):
+def hit_fn(score):
     
     game_deck = create_deck_blackjack()
     first_hand = True
