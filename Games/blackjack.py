@@ -116,6 +116,7 @@ def hit_fn(score):
     
     my_draw = Deck.draw_card(x, game_deck)
     my_score = find_sum_of_cards(score, my_draw)
+    print(my_draw, my_score)
 
     return my_draw, my_score
     
