@@ -85,7 +85,7 @@ def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, ch
 
     game_deck = create_deck_blackjack()
 
-    while inner_game_running:
+    while inner_game_running == True:
 
         os.system("clear")
 
