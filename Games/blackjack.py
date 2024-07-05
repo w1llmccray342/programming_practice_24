@@ -2,7 +2,7 @@ from deck import *
 import os
 import sys
 # Add an option to split the deck
-sys.stdout = open("C:/Users/Scrin/OneDrive/Desktop/Logs/Log.txt", 'w')
+sys.stdout = open('C:/Users/Scrin/OneDrive/Desktop/Logs/log.txt', 'w')
 
 
 def det_ace_best_value(ival):
