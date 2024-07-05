@@ -10,5 +10,10 @@ class Test_Config(unittest.TestCase):
 
     def test_blackjack_det_ace_best_value(self):
 
-        self.assertEqual(1, det_ace_best_value(12))
-        self.assertEqual(11, det_ace_best_value(10))
+        for x in range(0, 20):
+            if x <= 10:
+                self.assertEqual(11, det_ace_best_value(x))
+                print(x, "Best value is 11!")
+            else:
+                self.assertEqual(1, det_ace_best_value(x))
+                print(x, "Best value is 1!")
