@@ -1,5 +1,5 @@
 from deck import *
-from os import system
+import os
 # Add an option to split the deck
 
 def det_ace_best_value(ival):
@@ -67,8 +67,9 @@ def find_sum_of_cards(ival, hand):
 def player_options_handler(score_ai, score_human):
 
     inner_game_running = True
-    system('cls')
+    os.system("cls")
 
+    game_deck = create_deck_blackjack()
 
     while inner_game_running:
         #my_stats()
@@ -78,15 +79,19 @@ def player_options_handler(score_ai, score_human):
         player_option = input("Please select one of the following options listed: ")
         
         # We need another conditional statement to determine what we should be using for our options on each hand.
+        # Do all player moves here.
+        # Do all ai mvoes here
         if player_option == 1:
-            system('cls')
-            hit_fn()
+            os.system("cls")
+            pass
         elif player_option == 2: 
-            system('cls')
+            os.system("cls")
             stand_fn()
         elif player_option == 3:
-            system('cls')
+            os.system("cls")
             double_down_fn()
+        
+
 
 
 def player_options():
@@ -101,24 +106,24 @@ def create_deck_blackjack():
     return game_deck
 
 
-# Player hits the desired number of times
-def hit_fn(score):
+# # Player hits the desired number of times
+# def hit_fn(first_hand, score):
     
-    game_deck = create_deck_blackjack()
-    first_hand = True
+#     game_deck = create_deck_blackjack()
+#     first_hand = True
 
-    if first_hand:
-        x = 2
-        first_hand = False
+#     if first_hand:
+#         x = 2
+#         first_hand = False
     
-    else: 
-        x = 1
+#     else: 
+#         x = 1
     
-    my_draw = Deck.draw_card(x, game_deck)
-    my_score = find_sum_of_cards(score, my_draw)
-    print(my_draw, my_score)
+#     my_draw = Deck.draw_card(x, game_deck)
+#     my_score = find_sum_of_cards(score, my_draw)
+#     print(my_draw, my_score)
 
-    return my_draw, my_score
+#     return my_draw, my_score, first_hand
     
    
 
@@ -131,7 +136,6 @@ def stand_fn(deck):
 # Player doubles down ANTE for a single card, call hit fn once here and append that to player_score
 # Return is 1.25 times for ANTE
 def double_down_fn(deck):
-    hit_fn(deck)
 
     pass
 
@@ -154,29 +158,33 @@ def game_loop():
     
     while game_running:
 
-        player_options_handler(player_score, ai_score)
+        deck = Deck()
+        game_deck = create_deck_blackjack()
 
-            # if first_draw:
-            #     player_hand = deck.draw_card(game_deck, 2)
-            #     print(game_deck)
-            #     print(type(player_hand))
-            #     print(player_hand[0:1])
+        if first_draw:
+            x = 2
+            first_draw = False
+        x = 1
+
+        player_hand = deck.draw_card(game_deck, x)
+        print(game_deck)
+        print(type(player_hand))
+        print(player_hand[0:1])
                 
                 
-            #     # Breaks at this point but what is the reason for it?
-            #     # List index is out of range
-            #     ai_hand = deck.draw_card(game_deck, 2)
-            #     first_draw = False
+                # Breaks at this point but what is the reason for it?
+                # List index is out of range
+        ai_hand = deck.draw_card(game_deck, x)
 
-            # player_hand = list(player_hand[0])
-            # ai_hand = list(ai_hand[0])
+        player_hand = list(player_hand[0])
+        ai_hand = list(ai_hand[0])
 
 
-            # # Turn this to a function
-            # player_score = find_sum_of_cards(player_score, player_hand)
-            # ai_score = find_sum_of_cards(ai_score, ai_hand)
+            # Turn this to a function
+        player_score = find_sum_of_cards(player_score, player_hand)
+        ai_score = find_sum_of_cards(ai_score, ai_hand)
 
-            # player_options_handler(game_deck, ai_hand, ai_score, player_hand, player_score, game_running)
+        player_options_handler(game_deck, ai_hand, ai_score, player_hand, player_score, game_running)
 
 
 
