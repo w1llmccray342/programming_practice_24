@@ -80,6 +80,8 @@ def player_options_handler(score_ai, score_human, ai_hand, player_hand, player_c
     inner_game_running = True
     os.system("clear")
 
+    print(ai_hand[0:1], player_hand[0:1])
+
     my_stats(score_ai, score_human, ai_hand, player_hand)
 
     game_deck = create_deck_blackjack()
