@@ -81,11 +81,11 @@ def my_stats(score_ai, score_human, ai_hand, player_hand):
 def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, chips):
 
     inner_game_running = True
-   
+    
 
     game_deck = create_deck_blackjack()
 
-    while inner_game_running == True:
+    while inner_game_running == True and not player_bust or not ai_bust:
 
         os.system("clear")
 
