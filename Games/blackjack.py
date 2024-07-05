@@ -1,8 +1,14 @@
 from deck import *
+from os import system
 # Add an option to split the deck
 
 def det_ace_best_value(ival):
-    pass
+    if ival <= 10:
+        best_val = 11
+    else:
+        best_val = 1
+    
+    return best_val
 
 def ante(chips):
     pass
@@ -61,6 +67,7 @@ def my_stats(w, x, y, z):
 def player_options_handler(deck, w, x, y, z, game_running):
 
     inner_game_running = True
+    system('cls')
 
 
     while inner_game_running:
@@ -71,11 +78,16 @@ def player_options_handler(deck, w, x, y, z, game_running):
 
     
         player_option = input("Please select one of the following options listed: ")
+        
+        # We need another conditional statement to determine what we should be using for our options on each hand.
         if player_option == 1:
+            system('cls')
             hit_fn(deck)
         elif player_option == 2: 
+            system('cls')
             stand_fn(deck)
         elif player_option == 3:
+            system('cls')
             double_down_fn(deck)
 
 
@@ -87,17 +99,28 @@ def player_options():
 
 # Player hits the desired number of times
 def hit_fn(deck):
-    pass
+
+
+    print("Adding new cards to hand!")
+
+    deck.draw_card(deck, 1)
+
+
     
 # Player can no longer hit AI is forced to hit.
 def stand_fn(deck):
     pass
 
 # Player doubles down ANTE for a single card, call hit fn once here and append that to player_score
+# Return is 1.25 times for ANTE
 def double_down_fn(deck):
     hit_fn(deck)
 
     pass
+
+# If two of the same card then we call this function instead
+def split(deck):
+    pass 
 
 
 
