@@ -71,7 +71,7 @@ def player_options_handler(score_ai, score_human):
 
 
     while inner_game_running:
-        my_stats()
+        #my_stats()
 
         player_options()
     
@@ -115,7 +115,7 @@ def hit_fn(score):
         x = 1
     
     my_draw = Deck.draw_card(x, game_deck)
-    my_score = find_sum_of_cards(w, my_draw)
+    my_score = find_sum_of_cards(score, my_draw)
 
     return my_draw, my_score
     
