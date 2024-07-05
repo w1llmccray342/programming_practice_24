@@ -198,8 +198,8 @@ def game_loop():
                 # List index is out of range
         ai_hand = Deck.draw_card(game_deck, x)
 
-        player_hand = list(player_hand[0])
-        ai_hand = list(ai_hand[0])
+        player_hand = list(player_hand[0:1])
+        ai_hand = list(ai_hand[0:1])
 
 
             # Turn this to a function
