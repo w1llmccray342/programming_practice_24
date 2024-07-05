@@ -13,6 +13,17 @@ def det_ace_best_value(ival):
 def ante(chips):
     pass
 
+def continue_op():
+    continue_opt = input("Press Y to continue or N to close the program: ")
+    continue_opt.upper()
+
+    if continue_opt == "Y":
+        os.system("clear")
+        return True
+    else:
+        return False
+
+
 # This will break on a second loop as it resets sum_of_cards, we need to take an initial value
 def find_sum_of_cards(ival, hand):
     sum_of_cards = ival
@@ -54,20 +65,22 @@ def find_sum_of_cards(ival, hand):
     
     return sum_of_cards
 
-# def my_stats(w, x, y, z):
-#     print(f"Dealer has a... {w[0]} and {w[1]}")
-#     print(f"Dealer is at {x} score.")
-#     print(f"Player has...{y[0]} and {y[1]}")
-#     print(f"Player is at {z} score.")
-#     print("What would you like to do?")
+def my_stats(w, x, y, z):
+    print(f"Dealer has a... {y[0]} and {y[1]}")
+    print(f"Dealer is at {w} score.")
+    print(f"Player has...{z[0]} and {z[1]}")
+    print(f"Player is at {x} score.")
+    print("What would you like to do?")
 
 
 
 
-def player_options_handler(score_ai, score_human, player_chips):
+def player_options_handler(score_ai, score_human, ai_hand, player_hand):
 
     inner_game_running = True
     os.system("clear")
+
+    my_stats(score_ai, score_human, ai_hand, player_hand)
 
     game_deck = create_deck_blackjack()
 
@@ -91,6 +104,8 @@ def player_options_handler(score_ai, score_human, player_chips):
             os.system("clear")
             double_down_fn()
         
+        inner_game_running = continue_op()
+
 
 
 
