@@ -150,20 +150,10 @@ def game_loop():
 
     player_score = 0
     ai_score = 0
-
-    # Fn to determine if deck is empty
-
-    my_deck_is_empty = True
-    first_draw = True
-
-    if my_deck_is_empty == True:
-       
-        deck = Deck
-        game_deck = deck.create_deck()
     
-        while game_running:
+    while game_running:
 
-            player_options_handler()
+        player_options_handler(player_score, ai_score)
 
             # if first_draw:
             #     player_hand = deck.draw_card(game_deck, 2)
