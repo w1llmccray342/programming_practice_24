@@ -166,7 +166,7 @@ def split(deck):
 # Blackjack game loop, player should have 21 to win.
 def game_loop():
 
-    sys.stdout = open('/Desktop/Logs/Log.txt')
+    sys.stdout = open('/Desktop/Logs/Log.txt', 'w')
     # Deck should draw the first card it sees and assign it to player.
     game_running = True
 
