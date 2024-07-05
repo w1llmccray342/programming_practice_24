@@ -1,7 +1,9 @@
 from deck import *
 import os
-import logging
+import sys
 # Add an option to split the deck
+sys.stdout = open
+
 
 def det_ace_best_value(ival):
     if ival <= 10:
@@ -81,7 +83,7 @@ def player_options_handler(score_ai, score_human, ai_hand, player_hand, player_c
     inner_game_running = True
     os.system("clear")
 
-    print(ai_hand[0:1], player_hand[0:1])
+    print(ai_hand, player_hand)
 
     my_stats(score_ai, score_human, ai_hand, player_hand)
 
@@ -176,7 +178,7 @@ def game_loop():
     ai_score = 0
     
     while game_running:
-        logging.basicConfig(filename='BlkLog.log', level=logging.INFO)
+        
 
         game_deck = create_deck_blackjack()
 
@@ -186,7 +188,8 @@ def game_loop():
         if first_draw:
             x = 2
             first_draw = False
-        x = 1
+        else:
+            x = 1
 
         player_hand = Deck.draw_card(game_deck, x)
         print(game_deck)
