@@ -55,7 +55,7 @@ def find_sum_of_cards(ival, hand):
            
         elif my_extract_value[0] == "A":
                 # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
-            det_ace_best_value(ival)
+            my_int_temp_value = det_ace_best_value(sum_of_cards)
             
         else:
             my_int_temp_value = int(my_extract_value[0])
