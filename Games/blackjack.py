@@ -67,7 +67,7 @@ def find_sum_of_cards(ival, hand):
 def player_options_handler(score_ai, score_human, player_chips):
 
     inner_game_running = True
-    os.system("cls")
+    os.system("clear")
 
     game_deck = create_deck_blackjack()
 
@@ -82,13 +82,13 @@ def player_options_handler(score_ai, score_human, player_chips):
         # Do all player moves here.
         # Do all ai mvoes here
         if player_option == 1:
-            os.system("cls")
+            os.system("clear")
             pass
         elif player_option == 2: 
-            os.system("cls")
+            os.system("clear")
             stand_fn()
         elif player_option == 3:
-            os.system("cls")
+            os.system("clear")
             double_down_fn()
         
 
