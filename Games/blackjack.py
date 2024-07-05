@@ -163,27 +163,29 @@ def game_loop():
     
         while game_running:
 
-            if first_draw:
-                player_hand = deck.draw_card(game_deck, 2)
-                print(game_deck)
-                print(type(player_hand))
-                print(player_hand[0:1])
+            player_options_handler()
+
+            # if first_draw:
+            #     player_hand = deck.draw_card(game_deck, 2)
+            #     print(game_deck)
+            #     print(type(player_hand))
+            #     print(player_hand[0:1])
                 
                 
-                # Breaks at this point but what is the reason for it?
-                # List index is out of range
-                ai_hand = deck.draw_card(game_deck, 2)
-                first_draw = False
+            #     # Breaks at this point but what is the reason for it?
+            #     # List index is out of range
+            #     ai_hand = deck.draw_card(game_deck, 2)
+            #     first_draw = False
 
-            player_hand = list(player_hand[0])
-            ai_hand = list(ai_hand[0])
+            # player_hand = list(player_hand[0])
+            # ai_hand = list(ai_hand[0])
 
 
-            # Turn this to a function
-            player_score = find_sum_of_cards(player_score, player_hand)
-            ai_score = find_sum_of_cards(ai_score, ai_hand)
+            # # Turn this to a function
+            # player_score = find_sum_of_cards(player_score, player_hand)
+            # ai_score = find_sum_of_cards(ai_score, ai_hand)
 
-            player_options_handler(game_deck, ai_hand, ai_score, player_hand, player_score, game_running)
+            # player_options_handler(game_deck, ai_hand, ai_score, player_hand, player_score, game_running)
 
 
 
