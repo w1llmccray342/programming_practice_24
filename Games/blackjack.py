@@ -161,6 +161,9 @@ def game_loop():
         deck = Deck()
         game_deck = create_deck_blackjack()
 
+        first_draw = True
+
+        # 165 thru 187 can probably be collapsed to a function
         if first_draw:
             x = 2
             first_draw = False
