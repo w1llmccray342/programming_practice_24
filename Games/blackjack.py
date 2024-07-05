@@ -1,4 +1,4 @@
-from deck import *
+from .deck import *
 from os import system
 # Add an option to split the deck
 
