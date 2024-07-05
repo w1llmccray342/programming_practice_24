@@ -2,7 +2,7 @@ from deck import *
 import os
 import sys
 # Add an option to split the deck
-sys.stdout = open
+sys.stdout = open("C:/Users/Scrin/OneDrive/Desktop/Logs/Log.txt", 'w')
 
 
 def det_ace_best_value(ival):
@@ -210,6 +210,9 @@ def game_loop():
         ai_score = find_sum_of_cards(ai_score, ai_hand)
 
         player_options_handler(ai_score, player_score, ai_hand, player_hand, player_chips)
+        
+        sys.stdout.close()
+        sys.stdout = sys.__stdout__
 
 
 
