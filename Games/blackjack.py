@@ -68,11 +68,11 @@ def find_sum_of_cards(ival, hand):
     
     return sum_of_cards
 
-def my_stats(w, x, y, z):
-    print(f"Dealer has a... {y[0]} and {y[1]}")
-    print(f"Dealer is at {w} score.")
-    print(f"Player has...{z[0]} and {z[1]}")
-    print(f"Player is at {x} score.")
+def my_stats(score_ai, score_human, ai_hand, player_hand):
+    print(f"Dealer has a... {ai_hand[0]} and {player_hand[1]}")
+    print(f"Dealer is at {score_ai} score.")
+    print(f"Player has...{player_hand[0]} and {player_hand[1]}")
+    print(f"Player is at {score_human} score.")
     print("What would you like to do?")
 
 
