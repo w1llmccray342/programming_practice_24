@@ -40,7 +40,7 @@ def find_sum_of_cards(ival, hand):
         print(type(cards))
 
             # We splice that to the
-        my_temp_value = cards[0:1]
+        my_temp_value = cards[0:2]
         my_int_temp_value = 0
       
 
