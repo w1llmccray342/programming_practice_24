@@ -75,7 +75,7 @@ def my_stats(w, x, y, z):
 
 
 
-def player_options_handler(score_ai, score_human, ai_hand, player_hand):
+def player_options_handler(score_ai, score_human, ai_hand, player_hand, player_chips):
 
     inner_game_running = True
     os.system("clear")
@@ -102,7 +102,7 @@ def player_options_handler(score_ai, score_human, ai_hand, player_hand):
             stand_fn()
         elif player_option == 3:
             os.system("clear")
-            double_down_fn()
+            double_down_fn(player_chips)
         
         inner_game_running = continue_op()
 
