@@ -64,31 +64,29 @@ def my_stats(w, x, y, z):
 
 
 
-def player_options_handler(deck, w, x, y, z, game_running):
+def player_options_handler(w):
 
     inner_game_running = True
     system('cls')
 
 
     while inner_game_running:
-        my_stats(w, x, y, z)
+        my_stats()
 
         player_options()
-
-
     
         player_option = input("Please select one of the following options listed: ")
         
         # We need another conditional statement to determine what we should be using for our options on each hand.
         if player_option == 1:
             system('cls')
-            hit_fn(deck)
+            hit_fn()
         elif player_option == 2: 
             system('cls')
-            stand_fn(deck)
+            stand_fn()
         elif player_option == 3:
             system('cls')
-            double_down_fn(deck)
+            double_down_fn()
 
 
 def player_options():
@@ -96,14 +94,32 @@ def player_options():
     print("2. Stand")
     print("3. Double Down")
 
+def create_deck_blackjack():
+    deck = Deck
+    game_deck = deck.create_deck()
+
+    return game_deck
+
 
 # Player hits the desired number of times
-def hit_fn(deck):
+def hit_fn(w):
+    
+    game_deck = create_deck_blackjack()
+    first_hand = True
 
+    if first_hand:
+        x = 2
+        first_hand = False
+    
+    else: 
+        x = 1
+    
+    my_draw = Deck.draw_card(x, game_deck)
+    my_score = find_sum_of_cards(w, my_draw)
 
-    print("Adding new cards to hand!")
-
-    deck.draw_card(deck, 1)
+    return my_draw, my_score
+    
+   
 
 
     
@@ -168,6 +184,8 @@ def game_loop():
             ai_score = find_sum_of_cards(ai_score, ai_hand)
 
             player_options_handler(game_deck, ai_hand, ai_score, player_hand, player_score, game_running)
+
+
 
             
 
