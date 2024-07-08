@@ -29,7 +29,7 @@ def continue_op():
 # This will break on a second loop as it resets sum_of_cards, we need to take an initial value
 def find_sum_of_cards(ival, hand):
     sum_of_cards = ival
-    sum_of_cards = 0 
+    i_value = ival
     my_hand = hand
 
     print(f"Current hand value is at {sum_of_cards}")
@@ -44,13 +44,12 @@ def find_sum_of_cards(ival, hand):
         print(type(cards))
 
         print(f"Card strings present {cards[0:2]}")
- 
+
       
         if cards[0:2] == "10" or cards[0] in ["J", "Q", "K"]:
             my_int_temp_value = 10
             
         elif cards[0] == "A":
-            # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
          my_int_temp_value = det_ace_best_value(sum_of_cards)
            
         else:
@@ -60,6 +59,9 @@ def find_sum_of_cards(ival, hand):
         print(my_int_temp_value)
         print(type(my_int_temp_value))
         print(f"Adding {cards} to {my_hand} we get... {sum_of_cards}")
+    
+    # Subtract the total sum of cards from the initial value given.
+    sum_of_cards -= i_value
         
     return sum_of_cards
 
