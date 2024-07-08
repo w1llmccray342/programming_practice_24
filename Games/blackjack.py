@@ -183,6 +183,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         elif player_option == 2 or player_cannot_hit == True and not_over_twenty_one == True: 
             print("No more cards.")
             player_stand = stand_fn(deck, ai_hand)
+            player_stand = list(player_stand)
             deck_ow = player_stand[1]
             
             ai_hand = player_stand[0]
