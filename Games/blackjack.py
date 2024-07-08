@@ -116,10 +116,10 @@ def hit_fn(deck, hand):
     # When we draw a new card we are changing everything in the new_card to a string, we don't want any of the front though
     # So remove the first and last index:
     new_card = str(new_card)
-    new_card = new_card.pop()
-    new_card = new_card.pop(0)
+    my_newest_card = new_card[1:len(new_card) - 1]
+    print(my_newest_card)
     
-    my_hand.append(str(new_card))
+    my_hand.append(my_newest_card)
 
     return my_hand   
    
