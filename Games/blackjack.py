@@ -29,11 +29,12 @@ def continue_op():
 # This will break on a second loop as it resets sum_of_cards, we need to take an initial value
 def find_sum_of_cards(ival, hand):
     sum_of_cards = ival
+    my_hand = hand
     
     # Iterate through the list
     # Extract only the first element
     # We are looking at BOTH string values
-    for cards in hand:
+    for cards in my_hand:
 
         # Extract the first element of Cards in this case the index of "0" should give us 6
         print(cards)
