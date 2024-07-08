@@ -110,10 +110,11 @@ def check_scores_set_win(game_state, ai_score, player_score):
 
 # Player hits the desired number of times
 def hit_fn(deck, hand):
-    new_card = []
-    new_card.append(Deck.draw_card(deck, 1)[0])
-    print(new_card)
-    pass
+    
+    new_card = Deck.draw_card(deck, 1)[0]
+    hand.append(new_card)
+
+    return hand
    
 
 
