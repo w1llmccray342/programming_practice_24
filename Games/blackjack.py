@@ -58,7 +58,8 @@ def find_sum_of_cards(ival, hand):
         sum_of_cards += my_int_temp_value
         print(my_int_temp_value)
         print(type(my_int_temp_value))
-        print(f"Adding {cards} to {my_hand} we get... {sum_of_cards}")
+        
+    print(f"Adding {cards} to {my_hand} we get... {sum_of_cards - ival}")
     
     # Subtract the total sum of cards from the initial value given.
     sum_of_cards -= i_value
