@@ -116,8 +116,9 @@ def check_scores_set_win(game_state, ai_score, player_score):
 # Player hits the desired number of times
 def hit_fn(deck, hand):
     new_card = Deck.draw_card(deck, 1)[0]
-    hand.append(new_card)
-    return hand   
+    my_hand = hand
+    my_hand.append(new_card)
+    return my_hand   
    
 
 
@@ -161,6 +162,7 @@ def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, ch
         # Do all ai moves here
         os.system("clear")
         if player_option == 1:
+            print(type(player_hand), player_hand)
             player_hand = hit_fn(deck, player_hand)
             score_human = find_sum_of_cards(score_human, player_hand)
         
