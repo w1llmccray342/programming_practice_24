@@ -30,6 +30,10 @@ def continue_op():
 def find_sum_of_cards(ival, hand):
     sum_of_cards = ival
     my_hand = hand
+
+    sum_of_cards = 0
+
+    print(f"Current hand value is at {sum_of_cards}")
     
     # Iterate through the list
     # Extract only the first element
@@ -39,9 +43,7 @@ def find_sum_of_cards(ival, hand):
         # Extract the first element of Cards in this case the index of "0" should give us 6
         print(f"Cards present are... {cards}")
         print(type(cards))
-
-            # Inner for loop
-          
+ 
       
         if "10" in cards[0:2] or cards[0] in ["J", "Q", "K"]:
             my_int_temp_value = 10
