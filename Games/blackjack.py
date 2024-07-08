@@ -142,12 +142,9 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
     inner_game_running = True
     
     while inner_game_running == True:
-        inner_ai_hand = ai_hand
-        inner_player_hand = player_hand
+       
 
         os.system("clear")
-
-        print(inner_ai_hand, inner_player_hand)
 
         my_stats(score_ai, score_human, ai_hand, player_hand)
 
@@ -163,7 +160,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         # os.system("clear")
         if player_option == 1:
             print(type(player_hand), player_hand)
-            player_hand = hit_fn(deck, player_hand)
+            player_hand.append(hit_fn(deck, player_hand))
             score_human = find_sum_of_cards(score_human, player_hand)
         
         elif player_option == 2: 
