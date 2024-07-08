@@ -161,8 +161,11 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         if player_option == 1:
             print(type(player_hand), player_hand)
             # Overwrite player_hand
-            player_hand = hit_fn(deck, player_hand)  
-            print(player_hand)
+            ow_list = hit_fn(deck, player_hand)  
+            ow_list = list(ow_list)
+            ow_list[0] = player_hand
+            ow_list[1] = deck
+
 
             score_human = find_sum_of_cards(score_human, player_hand)
         
