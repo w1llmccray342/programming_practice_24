@@ -58,6 +58,7 @@ def find_sum_of_cards(ival, hand):
         print(my_int_temp_value)
                 
         print(type(my_int_temp_value))
+        print(f"Adding {cards} to {my_hand} we get... {sum_of_cards}")
         
     return sum_of_cards
 
