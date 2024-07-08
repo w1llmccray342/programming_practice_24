@@ -41,6 +41,8 @@ def find_sum_of_cards(ival, hand):
         # Extract the first element of Cards in this case the index of "0" should give us 6
         print(f"Cards present are... {cards}")
         print(type(cards))
+
+        print(f"Card strings present {cards[0:2]}")
  
       
         if "10" == cards[0:2] or cards[0] in ["J", "Q", "K"]:
