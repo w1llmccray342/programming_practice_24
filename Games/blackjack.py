@@ -37,7 +37,7 @@ def find_sum_of_cards(ival, hand):
     for cards in my_hand:
 
         # Extract the first element of Cards in this case the index of "0" should give us 6
-        print(cards)
+        print(f"Cards present are... {cards}")
         print(type(cards))
 
             # Inner for loop
