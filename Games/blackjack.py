@@ -163,8 +163,9 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             # Overwrite player_hand
             ow_list = hit_fn(deck, player_hand)  
             ow_list = list(ow_list)
-            my_hand = str(ow_list[0]) 
-            player_hand.append(my_hand)
+            my_hand = ow_list[0]
+            
+            player_hand = my_hand
             deck = ow_list[1]
 
             score_human = find_sum_of_cards(score_human, player_hand)
