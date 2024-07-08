@@ -1,6 +1,5 @@
 from deck import *
 import os
-import sys
 # Add an option to split the deck
 
 
@@ -43,22 +42,20 @@ def find_sum_of_cards(ival, hand):
         my_temp_value = cards[0:2]
         my_int_temp_value = 0
       
-
-        my_extract_value = str(my_temp_value)
             
         print(my_temp_value)
             
             # We use conditional statements to check and assign a value
            
-        if my_extract_value == "10" or my_extract_value[0] in ["J", "Q", "K"]:
+        if my_temp_value == "10" or my_temp_value[0] in ["J", "Q", "K"]:
             my_int_temp_value = 10
            
-        elif my_extract_value[0] == "A":
+        elif my_temp_value[0] == "A":
                 # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
             my_int_temp_value = det_ace_best_value(sum_of_cards)
             
         else:
-            my_int_temp_value = int(my_extract_value[0])
+            my_int_temp_value = int(my_temp_value[0])
 
         sum_of_cards += my_int_temp_value
             
