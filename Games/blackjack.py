@@ -42,6 +42,7 @@ def find_sum_of_cards(ival, hand):
 
             # Inner for loop
         for x in cards:
+           print(f"X value is... {x}")
       
            if "10" in x[0:2] or x[0] in ["J", "Q", "K"]:
                my_int_temp_value = 10
