@@ -182,14 +182,15 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         
         elif player_option == 2 or player_cannot_hit == True and not_over_twenty_one == True: 
             print("No more cards.")
-            player_stand = stand_fn(deck, ai_hand)
-            player_stand = list(player_stand)
-            deck_ow = player_stand[1]
-            player_stand_hand = player_stand[0]
-            
-            ai_hand = player_stand_hand
+            deck_ow = stand_fn(deck, ai_hand)
+            player_cannot_hit = deck_ow[1]
+            player_stand_hand = deck_ow[0]
+
+            deck_hand = player_stand_hand[0]
+            deck = player_stand_hand[1]
+            ai_hand = deck_hand
             print(f"Current AI hand is {ai_hand}")
-            deck = deck_ow
+            
             score_ai = find_sum_of_cards(score_ai, ai_hand)
         
         elif player_option == 3:
