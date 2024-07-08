@@ -115,7 +115,6 @@ def check_scores_set_win(game_state, ai_score, player_score):
 
 # Player hits the desired number of times
 def hit_fn(deck, hand):
-    
     new_card = Deck.draw_card(deck, 1)[0]
     hand.append(new_card)
     return hand   
@@ -155,20 +154,20 @@ def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, ch
 
         player_options()
     
-        player_option = input("Please select one of the following options listed: ")
+        player_option = int(input("Please select one of the following options listed: "))
         
         # We need another conditional statement to determine what we should be using for our options on each hand. If we see certain cards we should split accordingly. Hit, stand, double down, and split are always available
         # Do all player moves here.
-        # Do all ai mvoes here
+        # Do all ai moves here
+        os.system("clear")
         if player_option == 1:
-            os.system("clear")
             player_hand = hit_fn(deck, player_hand)
             score_human = find_sum_of_cards(score_human, player_hand)
+        
         elif player_option == 2: 
-            os.system("clear")
             stand_fn()
+        
         elif player_option == 3:
-            os.system("clear")
             double_down_fn(chips)
         
         inner_game_running = continue_op()
