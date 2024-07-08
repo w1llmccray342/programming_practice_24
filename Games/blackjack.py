@@ -187,10 +187,11 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             player_stand_hand = deck_ow[0]
 
             deck_hand = player_stand_hand[0]
+            print(player_stand_hand)
             deck = player_stand_hand[1]
             ai_hand = deck_hand
             print(f"Current AI hand is {ai_hand}")
-            
+
             score_ai = find_sum_of_cards(score_ai, ai_hand)
         
         elif player_option == 3:
