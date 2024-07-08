@@ -43,10 +43,10 @@ def find_sum_of_cards(ival, hand):
         print(type(cards))
  
       
-        if "10" in cards[0:2] or cards[0] in ["J", "Q", "K"]:
+        if "10" == cards[0:2] or cards[0] in ["J", "Q", "K"]:
             my_int_temp_value = 10
             
-        elif "A" in cards[0]:
+        elif "A" == cards[0]:
             # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
          my_int_temp_value = det_ace_best_value(sum_of_cards)
            
