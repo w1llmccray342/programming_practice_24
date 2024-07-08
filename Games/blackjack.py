@@ -224,7 +224,7 @@ def game_loop():
         print(player_hand, ai_hand, player_score, ai_score)
       
 
-        player_options_handler(game_deck, ai_score, player_score, ai_hand, player_hand, player_chips)
+        #player_options_handler(game_deck, ai_score, player_score, ai_hand, player_hand, player_chips)
         
 
 
