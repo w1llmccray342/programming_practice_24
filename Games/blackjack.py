@@ -144,10 +144,12 @@ def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, ch
     inner_game_running = True
     
     while inner_game_running == True:
+        inner_ai_hand = ai_hand
+        inner_player_hand = player_hand
 
         os.system("clear")
 
-        print(ai_hand, player_hand)
+        print(inner_ai_hand, inner_player_hand)
 
         my_stats(score_ai, score_human, ai_hand, player_hand)
 
@@ -160,7 +162,7 @@ def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, ch
         # We need another conditional statement to determine what we should be using for our options on each hand. If we see certain cards we should split accordingly. Hit, stand, double down, and split are always available
         # Do all player moves here.
         # Do all ai moves here
-        os.system("clear")
+        # os.system("clear")
         if player_option == 1:
             print(type(player_hand), player_hand)
             player_hand = hit_fn(deck, player_hand)
