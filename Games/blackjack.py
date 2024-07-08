@@ -76,44 +76,6 @@ def my_stats(score_ai, score_human, ai_hand, player_hand):
     print("What would you like to do?")
 
 
-
-
-def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, chips):
-
-    inner_game_running = True
-    
-
-    game_deck = create_deck_blackjack()
-
-    while inner_game_running == True and not player_bust or not ai_bust:
-
-        os.system("clear")
-
-        print(ai_hand, player_hand)
-
-        my_stats(score_ai, score_human, ai_hand, player_hand)
-
-        player_options()
-    
-        player_option = input("Please select one of the following options listed: ")
-        
-        # We need another conditional statement to determine what we should be using for our options on each hand. If we see certain cards we should split accordingly. Hit, stand, double down, and split are always available
-        # Do all player moves here.
-        # Do all ai mvoes here
-        if player_option == 1:
-            os.system("clear")
-            player_hand = hit_fn(deck, player_hand)
-            score_human = find_sum_of_cards(score_human, player_hand)
-        elif player_option == 2: 
-            os.system("clear")
-            stand_fn()
-        elif player_option == 3:
-            os.system("clear")
-            double_down_fn(chips)
-        
-        inner_game_running = continue_op()
-
-
 def player_options():
     print("1. Hit")
     print("2. Stand")
@@ -174,6 +136,46 @@ def double_down_fn(deck):
 # If two of the same card then we call this function instead
 def split(deck):
     pass 
+
+
+
+def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, chips):
+
+    inner_game_running = True
+    
+    player_bust = False
+    ai_bust = False
+
+    while inner_game_running == True and not player_bust == True or not ai_bust == True:
+
+        os.system("clear")
+
+        print(ai_hand, player_hand)
+
+        my_stats(score_ai, score_human, ai_hand, player_hand)
+
+        # After counting check to make sure that player_score is not above 21 and ai_score is not above 21 every round
+
+        player_options()
+    
+        player_option = input("Please select one of the following options listed: ")
+        
+        # We need another conditional statement to determine what we should be using for our options on each hand. If we see certain cards we should split accordingly. Hit, stand, double down, and split are always available
+        # Do all player moves here.
+        # Do all ai mvoes here
+        if player_option == 1:
+            os.system("clear")
+            player_hand = hit_fn(deck, player_hand)
+            score_human = find_sum_of_cards(score_human, player_hand)
+        elif player_option == 2: 
+            os.system("clear")
+            stand_fn()
+        elif player_option == 3:
+            os.system("clear")
+            double_down_fn(chips)
+        
+        inner_game_running = continue_op()
+
 
 
 
