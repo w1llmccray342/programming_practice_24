@@ -31,6 +31,8 @@ def find_sum_of_cards(ival, hand):
     sum_of_cards = ival
     my_hand = hand
 
+    sum_of_cards = 0
+
     print(f"Current hand value is at {sum_of_cards}")
     
     # Iterate through the list
