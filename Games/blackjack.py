@@ -116,7 +116,7 @@ def hit_fn(deck, hand):
         hand.append(x)
     print(f"New hand is {hand}")
 
-    return hand
+    return hand, deck
    
 
 
