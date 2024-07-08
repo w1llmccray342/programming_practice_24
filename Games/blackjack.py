@@ -29,8 +29,6 @@ def continue_op():
 # This will break on a second loop as it resets sum_of_cards, we need to take an initial value
 def find_sum_of_cards(ival, hand):
     sum_of_cards = 0 
-    
-    sum_of_cards += ival
     my_hand = hand
 
     print(f"Current hand value is at {sum_of_cards}")
@@ -56,6 +54,7 @@ def find_sum_of_cards(ival, hand):
            
         else:
          my_int_temp_value = int(cards[0])
+        
         sum_of_cards += my_int_temp_value
         print(my_int_temp_value)
         print(type(my_int_temp_value))
