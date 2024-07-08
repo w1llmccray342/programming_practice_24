@@ -41,6 +41,7 @@ def find_sum_of_cards(ival, hand):
             # We splice that to the
         my_temp_value = cards[0:2]
         my_int_temp_value = 0
+        my_temp_value = str(my_temp_value)
       
             
         print(my_temp_value)
