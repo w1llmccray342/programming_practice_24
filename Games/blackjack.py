@@ -112,7 +112,7 @@ def check_scores_set_win(game_state, ai_score, player_score):
 def hit_fn(deck, hand):
     new_card = Deck.draw_card(deck, 1)[0]
     my_hand = hand
-    my_hand.append(new_card)
+    my_hand.append(str(new_card))
     return my_hand   
    
 
