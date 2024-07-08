@@ -143,10 +143,7 @@ def player_options_handler(deck, ai_hand, player_hand, score_ai, score_human, ch
 
     inner_game_running = True
     
-    player_bust = False
-    ai_bust = False
-
-    while inner_game_running == True and not player_bust == True or not ai_bust == True:
+    while inner_game_running == True:
 
         os.system("clear")
 
