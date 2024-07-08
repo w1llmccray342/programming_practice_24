@@ -112,7 +112,15 @@ def check_scores_set_win(game_state, ai_score, player_score):
 def hit_fn(deck, hand):
     new_card = Deck.draw_card(deck, 1)[0]
     my_hand = hand
+
+    # When we draw a new card we are changing everything in the new_card to a string, we don't want any of the front though
+    # So remove the first and last index:
+    new_card = str(new_card)
+    new_card = new_card.pop()
+    new_card = new_card.pop(0)
+    
     my_hand.append(str(new_card))
+
     return my_hand   
    
 
