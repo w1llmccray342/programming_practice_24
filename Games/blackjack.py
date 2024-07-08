@@ -64,9 +64,9 @@ def find_sum_of_cards(ival, hand):
     return sum_of_cards
 
 def my_stats(score_ai, score_human, ai_hand, player_hand):
-    print(f"Dealer has a... {ai_hand[0]} and {ai_hand[1]}")
+    print(f"Dealer has a... {ai_hand}")
     print(f"Dealer is at {score_ai} score.")
-    print(f"Player has...{player_hand[0]} and {player_hand[1]}")
+    print(f"Player has...{player_hand}")
     print(f"Player is at {score_human} score.")
     print("What would you like to do?")
 
