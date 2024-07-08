@@ -160,7 +160,8 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         # os.system("clear")
         if player_option == 1:
             print(type(player_hand), player_hand)
-            player_hand.append(hit_fn(deck, player_hand))
+            my_vars = hit_fn(deck, player_hand)
+            player_hand.append(my_vars)
             score_human = find_sum_of_cards(score_human, player_hand)
         
         elif player_option == 2: 
