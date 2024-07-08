@@ -44,18 +44,19 @@ def find_sum_of_cards(ival, hand):
         my_temp_value = cards[0:2]
         my_int_temp_value = 0
         my_temp_value = str(my_temp_value)
+        print(my_temp_value)
       
            
-        if my_temp_value == "10" or my_temp_value[0] in ["J", "Q", "K"]:
-            my_int_temp_value = 10
+        # if my_temp_value == "10" or my_temp_value[0] in ["J", "Q", "K"]:
+        #     my_int_temp_value = 10
             
-        elif my_temp_value[0] == "A":
-            # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
-            my_int_temp_value = det_ace_best_value(sum_of_cards)
+        # elif my_temp_value[0] == "A":
+        #     # Needs to be some conditional logic for A since this is either 1 or 11 depending. Maybe a function, for now keep this at "11"
+        #     my_int_temp_value = det_ace_best_value(sum_of_cards)
                 
-        else:
-            my_int_temp_value = int(my_temp_value[0])
-        sum_of_cards += my_int_temp_value
+        # else:
+        #     my_int_temp_value = int(my_temp_value[0])
+        # sum_of_cards += my_int_temp_value
                 
     print(my_int_temp_value)
                 
