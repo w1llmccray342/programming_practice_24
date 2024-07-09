@@ -256,7 +256,7 @@ def game_loop():
         ai_score = find_sum_of_cards(0, ai_hand)
 
         print(player_hand, ai_hand, player_score, ai_score)
-        
+        os.system("clear")
         game_deck, _ = player_options_handler(game_deck, ai_score, player_score, ai_hand, player_hand, player_chips)
         game_running = continue_op()
 
