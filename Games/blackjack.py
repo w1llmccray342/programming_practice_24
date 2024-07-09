@@ -60,7 +60,7 @@ def find_sum_of_cards(ival, hand):
 def my_stats(score_ai, score_human, ai_hand, player_hand):
 
     print(f"Dealer is showing a... {ai_hand[0]}")
-    print(f"DEBUG: Dealer is at {score_ai}")
+    print(f"DEBUG: Dealer is at {score_ai} score.")
     print(f"Player has...{player_hand}")
     print(f"Player is at {score_human} score.")
     print("What would you like to do?")
@@ -171,23 +171,22 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
         # Clear some junk:
         os.system("clear")
-        over_twenty_one = check_scores_end_game(over_twenty_one, score_ai, score_human)
+        inner_game_running, _ = check_scores_end_game(over_twenty_one, score_ai, score_human)
+        if not inner_game_running:
+            break
         
-        if over_twenty_one == False:
-            inner_game_running = False
         
         deck = count_cards_left_in_deck(deck)
-
-
-        #os.system("clear")
-
         my_stats(score_ai, score_human, ai_hand, player_hand)
-
-        # After counting check to make sure that player_score is not above 21 and ai_score is not above 21 every round
-
         player_options(player_cannot_hit)
-    
-        player_option = int(input("Please select one of the following options listed: "))
+
+
+
+        try:
+            player_option = int(input("Please select one of the following options listed: "))
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 4.")
+            continue
         
         # We need another conditional statement to determine what we should be using for our options on each hand. If we see certain cards we should split accordingly. Hit, stand, double down, and split are always available
         # Do all player moves here.
