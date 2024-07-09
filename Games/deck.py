@@ -41,8 +41,9 @@ class Deck:
         # Can probably just reset the state of the game though to make this easier.
 
         drawn_cards = []
-     
-        while len(deck) == 0:
+        print(f"Current deck length is {len(deck)}")
+
+        if len(deck) == 0:
             print("Deck is empty, creating a new deck!")
             deck = Deck.create_deck()
     
