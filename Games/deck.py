@@ -32,10 +32,6 @@ class Deck:
     def assign_value():
         pass
 
-    # Function to remove a played card from the deck.
-    def remove_card():
-        pass
-
     # Function to draw a given number of cards from a newly created deck
     def draw_card(deck, nums):
 
@@ -46,7 +42,10 @@ class Deck:
 
         drawn_cards = []
      
-
+        while len(deck) == 0:
+            print("Deck is empty, creating a new deck!")
+            deck = Deck.create_deck()
+    
         for _ in range(nums):
             while  True:
                 suit_index = random.randint(0, 3)
