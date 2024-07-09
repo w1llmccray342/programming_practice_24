@@ -123,10 +123,9 @@ def hit_fn(deck, hand):
     
 # Player can no longer hit AI is forced to hit.
 def stand_fn(deck, hand):
-    player_cannot_hit = True
-
+    
     new_hand, deck = hit_fn(deck, hand)
-
+    hand.append(new_hand)
     return new_hand, deck
 
 
