@@ -164,7 +164,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
     not_over_twenty_one = True
     
     while inner_game_running == True:
-        count_cards_left_in_deck(deck)
+       
 
         #os.system("clear")
 
@@ -201,7 +201,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             deck_hand = player_stand_hand[0]
             deck_deck = player_stand_hand[1]
             print(player_stand_hand)
-            deck = deck_deck
+            deck = player_stand_hand[1]
             ai_hand = deck_hand
             print(f"Current AI hand is {ai_hand}")
 
