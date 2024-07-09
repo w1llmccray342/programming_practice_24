@@ -5,12 +5,7 @@ import os
 
 
 def det_ace_best_value(ival):
-    if ival <= 10:
-        best_val = 11
-    else:
-        best_val = 1
-    
-    return best_val
+    return 11 if ival <= 10 else 1
 
 def ante(chips):
     pass
