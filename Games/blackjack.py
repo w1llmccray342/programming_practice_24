@@ -161,7 +161,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
     not_over_twenty_one = True
     
     while inner_game_running == True:
-        count_cards_left_in_deck(deck)
+        deck = count_cards_left_in_deck(deck)
 
 
         #os.system("clear")
