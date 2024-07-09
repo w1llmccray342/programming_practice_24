@@ -43,15 +43,17 @@ class Deck:
         drawn_cards = []
         print(f"Current deck length is {len(deck)}")
 
-        if len(deck) == 0:
-            print("Deck is empty, creating a new deck!")
-            deck = Deck.create_deck()
-    
+       
         for _ in range(nums):
             while  True:
                 suit_index = random.randint(0, 3)
                 if deck[suit_index]:
                     break
+
+                if (all(len(deck[suit_index]) == 0)):
+                    print("Deck is empty, creating a new deck!")
+                    deck = Deck.create_deck()
+        
 
             card_index = random.randint(0, len(deck[suit_index]) - 1)
             drawn_card = deck[suit_index].pop(card_index)
