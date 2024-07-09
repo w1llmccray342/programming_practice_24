@@ -16,8 +16,7 @@ def ante(chips):
     pass
 
 def continue_op():
-    continue_opt = input("Press Y to continue or N to close the program: ")
-    continue_opt.upper()
+    continue_opt = input("Press Y to continue or N to close the program: ").upper()
 
     if continue_opt == "Y":
         os.system("clear")
@@ -29,15 +28,14 @@ def continue_op():
 # This will break on a second loop as it resets sum_of_cards, we need to take an initial value
 def find_sum_of_cards(ival, hand):
     sum_of_cards = ival
-    i_value = ival
-    my_hand = hand
+    
 
     print(f"Current hand value is at {sum_of_cards}")
     
     # Iterate through the list
     # Extract only the first element
     # We are looking at BOTH string values
-    for cards in my_hand:
+    for cards in hand:
 
         # Extract the first element of Cards in this case the index of "0" should give us 6
         print(f"Cards present are... {cards}")
@@ -56,13 +54,6 @@ def find_sum_of_cards(ival, hand):
          my_int_temp_value = int(cards[0])
         
         sum_of_cards += my_int_temp_value
-        print(my_int_temp_value)
-        print(type(my_int_temp_value))
-        
-    print(f"Adding {cards} to {my_hand} we get... {sum_of_cards - ival}")
-    
-    # Subtract the total sum of cards from the initial value given.
-    sum_of_cards -= i_value
         
     return sum_of_cards
 
@@ -147,11 +138,13 @@ def count_cards_left_in_deck(deck):
             for x in cards:
                 count += 1
 
-        print(f"Cards remaining in deck: {count}")
+        
         if count == 0:
             print("Deck is empty, creating a new deck!")
-            new_deck = Deck.create_deck()
-            deck = new_deck
+            deck = Deck.create_deck()
+        else:
+            print(f"Cards remaining in deck: {count}")
+    
         return deck
 
 
