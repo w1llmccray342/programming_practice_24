@@ -157,6 +157,8 @@ def count_cards_left_in_deck(deck):
 
 def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, chips):
 
+    
+
     inner_game_running = True
     player_cannot_hit = False
     ai_cnt_hit = False
@@ -166,6 +168,8 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
         # Clear some junk:
         os.system("clear")
+
+        print(f"Chips remaining: {chips}")
         
         
         deck = count_cards_left_in_deck(deck)
