@@ -144,6 +144,16 @@ def double_down_fn(deck):
 def split(deck):
     pass 
 
+def count_cards_left_in_deck(deck):
+        count = 0
+
+        for cards in deck:
+            
+            for x in cards:
+                count += 1
+
+        print(f"Cards remaining in deck: {count}")
+    
 
 
 def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, chips):
@@ -153,9 +163,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
     not_over_twenty_one = True
     
     while inner_game_running == True:
-
-        print(f"Cards remaining in deck: {len(deck)}")
-       
+        count_cards_left_in_deck(deck)
 
         #os.system("clear")
 
