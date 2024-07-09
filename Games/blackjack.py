@@ -58,10 +58,11 @@ def my_stats(score_ai, score_human, ai_hand, player_hand):
     print(f"DEBUG: Dealer is at {score_ai} score.")
     print(f"Player has...{player_hand}")
     print(f"Player is at {score_human} score.")
-    print("What would you like to do?")
+    
 
 
 def player_options(player_cannot_hit):
+    print("What would you like to do?")
 
     if player_cannot_hit != True:
         print("1. Hit")
