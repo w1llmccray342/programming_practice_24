@@ -138,7 +138,11 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- Red Joker           Black Joker         Empty card
+ Red Joker  - Reverse         
+ 
+ Black Joker - Game Over         
+
+ Empty card - Empty Hand and Draw a New One
 
   _________           _________           _________
  |*   ?   *|         |% \|||/ %|         |         |

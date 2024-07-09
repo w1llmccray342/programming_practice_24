@@ -124,9 +124,10 @@ def hit_fn(deck, hand):
 # Player can no longer hit AI is forced to hit.
 def stand_fn(deck, hand):
     player_cannot_hit = True
+
     new_hand, deck = hit_fn(deck, hand)
 
-    return new_hand, player_cannot_hit, deck
+    return new_hand, deck
 
 
 # Player doubles down ANTE for a single card, call hit fn once here and append that to player_score
@@ -162,6 +163,11 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
     not_over_twenty_one = True
     
     while inner_game_running == True:
+
+        # Check if we have reached the end of the game:
+        if not_over_twenty_one == False:
+            inner_game_running = False
+        
         deck = count_cards_left_in_deck(deck)
 
 
@@ -193,18 +199,21 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         
         elif player_option == 2 or player_cannot_hit == True and not_over_twenty_one == True: 
             print("No more cards.")
+            player_cannot_hit = True
             deck_ow = stand_fn(deck, ai_hand)
-            player_cannot_hit = deck_ow[1]
-            player_stand_hand = list(deck_ow[0])
+            deck_ow = list(deck_ow)
+            player_stand_hand = deck_ow[0]
 
             print(player_stand_hand)
-            deck = player_stand_hand[0]
-            ai_hand = player_stand_hand[1]
+            deck = player_stand_hand[1]
+            ai_hand = player_stand_hand[0]
             print(f"Current AI hand is {ai_hand}")
 
             score_ai = find_sum_of_cards(score_ai, ai_hand)
         
         elif player_option == 3:
+            print("No more cards")
+            player_cannot_hit = True
             double_down_fn(chips)
 
 
