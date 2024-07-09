@@ -1,5 +1,6 @@
 from deck import *
 import os
+import time
 # Add an option to split the deck
 
 
@@ -15,6 +16,7 @@ def continue_op():
 
     if continue_opt == "Y":
         os.system("clear")
+        time.sleep(2)
         print("Best of luck")
         return True
     else:
