@@ -80,7 +80,7 @@ def create_deck_blackjack():
 
     return game_deck
 
-def check_scores_end_game(ai_score, player_score):
+def check_scores_end_game(player_cnt_hit, ai_cnt_hit, ai_score, player_score):
 
     if player_score > 21:
         print("You bust! The house always wins!")
@@ -97,7 +97,15 @@ def check_scores_end_game(ai_score, player_score):
     elif ai_score == 21:
         print("Dealer has Blackjack! The house always wins!")
         return True, False, True
-
+    
+    elif player_cnt_hit == True and ai_cnt_hit  == True and player_score > ai_score:
+        print("Player wins the Hand!")
+        return True, True, False
+    
+    elif player_cnt_hit == True and ai_cnt_hit == True and ai_score > player_score:
+        print("Dealer wins the Hand!")
+        return True, False, True
+    
     return False, False, False
 
     
@@ -150,6 +158,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
     inner_game_running = True
     player_cannot_hit = False
+    ai_cnt_hit = False
 
     
     while inner_game_running == True:
@@ -186,6 +195,9 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             while score_ai <= 16:
                 ai_hand, deck = stand_fn(deck, ai_hand)
                 score_ai = find_sum_of_cards(0, ai_hand)
+            
+            if score_ai == 17:
+                ai_cnt_hit = True
         
         elif player_option == 3:
             print("Doubling down")
@@ -196,13 +208,15 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         my_stats(score_ai, score_human, ai_hand, player_hand)
 
 
-        game_over, player_win, ai_win = check_scores_end_game(score_ai, score_human)
+        game_over, player_win, ai_win = check_scores_end_game(player_cannot_hit, ai_cnt_hit, score_ai, score_human)
         if game_over:
             if player_win:
                 # Do this
+                # Increase chips
                 pass
             if ai_win:
                 # Do this
+                # Decrese chips
                 pass
             inner_game_running = False
 
