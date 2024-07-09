@@ -177,7 +177,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
         # After counting check to make sure that player_score is not above 21 and ai_score is not above 21 every round
 
-        player_options()
+        player_options(player_cannot_hit)
     
         player_option = int(input("Please select one of the following options listed: "))
         
