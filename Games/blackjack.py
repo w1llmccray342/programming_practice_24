@@ -149,6 +149,7 @@ def count_cards_left_in_deck(deck):
 
         print(f"Cards remaining in deck: {count}")
         if count == 0:
+            print("Deck is empty, creating a new deck!")
             new_deck = Deck.create_deck()
             deck = new_deck
         return deck
