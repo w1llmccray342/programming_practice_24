@@ -80,31 +80,22 @@ def create_deck_blackjack():
 
     return game_deck
 
-def check_scores_end_game(game_state, ai_score, player_score):
- player_win = False
- ai_win = False
+def check_scores_end_game(ai_score, player_score):
 
- if not game_state:
-        if ai_score > player_score and ai_score <= 21:
-            print("The house always wins!")
-            ai_win = True
-        elif player_score > ai_score and player_score <= 21:
-            print("Heey that's what we like to see")
-            player_win = True
+    if player_score > 21:
+        print("You bust! The house always wins!")
+        return True, False, True
+    elif ai_score > 21:
+        print("Dealer busts! You win!")
+        return True, True, False
+    elif player_score == 21:
+        print("Blackjack! You win!")
+        return True, True, False
+    elif ai_score == 21:
+        print("Dealer has Blackjack! The house always wins!")
+        return True, False, True
 
-        elif ai_score == 21:
-            print("Tough luck.")
-            ai_win = True
-
-        elif player_score == 21:
-            print("Blackjack! You win!")
-            player_win = False
-
-        elif player_score < ai_score:
-            print("You win!")
-            player_win = False
-
- return player_win, ai_win
+    return False, False, False
 
     
 
@@ -162,10 +153,6 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
         # Clear some junk:
         os.system("clear")
-        player_win, ai_win = check_scores_end_game(over_twenty_one, score_ai, score_human)
-        if player_win or ai_win:
-            inner_game_running = False
-            break
         
         
         deck = count_cards_left_in_deck(deck)
@@ -201,6 +188,8 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             print("Doubling down")
             player_cannot_hit = True
             double_down_fn(chips)
+
+        game_over, player_win, ai_win = check_scores_end_game(score_ai, score_human)
 
 
         player_win, ai_win = check_scores_end_game(over_twenty_one, score_ai, score_human)
