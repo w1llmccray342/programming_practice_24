@@ -87,27 +87,34 @@ def create_deck_blackjack():
     return game_deck
 
 def check_scores_end_game(game_state, ai_score, player_score):
-    player_win = False
-    ai_win = False
-    game_over = game_state
-
-    if ai_score > player_score and not ai_score > 21 and not ai_score == 21:
-        print("The house always wins!")
-        ai_win = True
-  
-    elif ai_score < player_score and not player_score > 21 and not player_score == 21:
-        print("Heey that's what we like to see")
-        player_win = True
-
-    elif ai_score == 21:
-        print("Tough luck.")
-        ai_win = True
-
-    elif player_score == 21:
-        print("Blackjack! You win!")
+    if game_state == False:
+        
         player_win = False
+        ai_win = False
 
-    return player_win, ai_win, game_over
+        if ai_score > player_score and not ai_score > 21 and not ai_score == 21:
+            print("The house always wins!")
+            ai_win = True
+    
+        elif ai_score < player_score and not player_score > 21 and not player_score == 21:
+            print("Heey that's what we like to see")
+            player_win = True
+
+        elif ai_score == 21:
+            print("Tough luck.")
+            ai_win = True
+
+        elif player_score == 21:
+            print("Blackjack! You win!")
+            player_win = False
+
+        elif player_score < ai_score:
+            print("You win!")
+            player_win = False
+    else:
+        print("Continuing the game!")
+
+    return game_state
 
     
 
@@ -163,8 +170,10 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
     
     while inner_game_running == True:
 
-        # Check if we have reached the end of the game:
-        # not_over_twenty_one = check_scores_end_game(not_over_twenty_one, score_ai, score_human)
+        # Clear some junk:
+        os.system("clear")
+        not_over_twenty_one = check_scores_end_game(not_over_twenty_one, score_ai, score_human)
+        
         if not_over_twenty_one == False:
             inner_game_running = False
         
@@ -184,7 +193,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         # We need another conditional statement to determine what we should be using for our options on each hand. If we see certain cards we should split accordingly. Hit, stand, double down, and split are always available
         # Do all player moves here.
         # Do all ai moves here
-        # os.system("clear")
+       
         if player_option == 1 and player_cannot_hit != True and not_over_twenty_one == True:
             player_hand, deck = hit_fn(deck, player_hand)
             score_human = find_sum_of_cards(0, player_hand)
@@ -222,6 +231,10 @@ def game_loop():
     ai_score = 0
     
     while game_running:
+
+        # print("Welcome, how many chips would you like to bet?")
+
+        # wager = int(input("Please type in the amount of chips you would like to bet"))
         
 
         game_deck = create_deck_blackjack()
