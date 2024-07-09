@@ -148,7 +148,10 @@ def count_cards_left_in_deck(deck):
                 count += 1
 
         print(f"Cards remaining in deck: {count}")
-        print(deck)
+        if count == 0:
+            new_deck = Deck.create_deck()
+            deck = new_deck
+        return deck
 
 
 def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, chips):
