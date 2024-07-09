@@ -7,6 +7,7 @@ class Deck:
 
 
     def shuffle_deck(deck):
+        my_new_deck = []
         for cards in deck:
             print(cards)
             for x in cards:

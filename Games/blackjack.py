@@ -3,7 +3,8 @@ import os
 import time
 # Add an option to split the deck
 
-
+def wild_cards(deck):
+    pass
 
 def det_ace_best_value(ival):
     return 11 if ival <= 10 else 1
