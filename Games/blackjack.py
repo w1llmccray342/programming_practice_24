@@ -103,11 +103,11 @@ def check_scores_end_game(player_cnt_hit, ai_cnt_hit, ai_score, player_score):
         print("Dealer has Blackjack! The house always wins!")
         return True, False, True
     
-    elif player_cnt_hit == True and ai_cnt_hit  == True and player_score > ai_score:
+    elif player_cnt_hit and ai_cnt_hit and player_score > ai_score:
         print("Player wins the Hand!")
         return True, True, False
     
-    elif player_cnt_hit == True and ai_cnt_hit == True and ai_score > player_score:
+    elif player_cnt_hit and ai_cnt_hit  and ai_score > player_score:
         print("Dealer wins the Hand!")
         return True, False, True
     
