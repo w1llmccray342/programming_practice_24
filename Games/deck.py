@@ -58,7 +58,7 @@ class Deck:
                 if deck[suit_index]:
                     break
 
-            Deck.check_if_empty() 
+            Deck.check_if_empty(deck, suit_index) 
            
 
             card_index = random.randint(0, len(deck[suit_index]) - 1)
