@@ -147,7 +147,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
     inner_game_running = True
     player_cannot_hit = False
-    over_twenty_one = False
+
     
     while inner_game_running == True:
 
@@ -192,8 +192,14 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         game_over, player_win, ai_win = check_scores_end_game(score_ai, score_human)
 
 
-        player_win, ai_win = check_scores_end_game(over_twenty_one, score_ai, score_human)
-        if player_win or ai_win:
+        game_over, player_win, ai_win = check_scores_end_game(score_ai, score_human)
+        if game_over:
+            if player_win:
+                # Do this
+                pass
+            if ai_win:
+                # Do this
+                pass
             inner_game_running = False
 
     return deck, inner_game_running
