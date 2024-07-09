@@ -165,15 +165,15 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
     inner_game_running = True
     player_cannot_hit = False
-    not_over_twenty_one = True
+    over_twenty_one = False
     
     while inner_game_running == True:
 
         # Clear some junk:
         os.system("clear")
-        not_over_twenty_one = check_scores_end_game(not_over_twenty_one, score_ai, score_human)
+        over_twenty_one = check_scores_end_game(over_twenty_one, score_ai, score_human)
         
-        if not_over_twenty_one == False:
+        if over_twenty_one == False:
             inner_game_running = False
         
         deck = count_cards_left_in_deck(deck)
@@ -193,11 +193,11 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         # Do all player moves here.
         # Do all ai moves here
        
-        if player_option == 1 and player_cannot_hit != True and not_over_twenty_one == True:
+        if player_option == 1 and player_cannot_hit != True:
             player_hand, deck = hit_fn(deck, player_hand)
             score_human = find_sum_of_cards(0, player_hand)
         
-        elif player_option == 2 or player_cannot_hit == True and not_over_twenty_one == True: 
+        elif player_option == 2 or player_cannot_hit == True:
             print("No more cards.")
             player_cannot_hit = True
             
@@ -211,6 +211,8 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             player_cannot_hit = True
             double_down_fn(chips)
 
+    return deck, inner_game_running
+
 
 
 
@@ -219,58 +221,25 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
 # Blackjack game loop, player should have 21 to win.
 def game_loop():
-
-    # Deck should draw the first card it sees and assign it to player.
     game_running = True
-
-    # Chips to start with
     player_chips = 400
-
-    player_score = 0
-    ai_score = 0
     
     while game_running:
-
-        # print("Welcome, how many chips would you like to bet?")
-
-        # wager = int(input("Please type in the amount of chips you would like to bet"))
-        
-
         game_deck = create_deck_blackjack()
+        
+        player_hand, game_deck = Deck.draw_card(game_deck, 2)
+        ai_hand, game_deck = Deck.draw_card(game_deck, 2)
 
-        first_draw = True
+        player_hand = list(player_hand)
+        ai_hand = list(ai_hand)
 
-        # 165 thru 187 can probably be collapsed to a function
-        if first_draw:
-            x = 2
-            first_draw = False
-        else:
-            x = 1
-
-        player_hand = Deck.draw_card(game_deck, x)
-        print(game_deck)
-        print(type(player_hand))
-        print(player_hand[0:1])
-                
-                
-                # Breaks at this point but what is the reason for it?
-                # List index is out of range
-        ai_hand = Deck.draw_card(game_deck, x)
-
-        player_hand = list(player_hand[0])
-        ai_hand = list(ai_hand[0])
-
-
-            # Turn this to a function
-        player_score = find_sum_of_cards(player_score, player_hand)
-        ai_score = find_sum_of_cards(ai_score, ai_hand)
+        player_score = find_sum_of_cards(player_hand)
+        ai_score = find_sum_of_cards(ai_hand)
 
         print(player_hand, ai_hand, player_score, ai_score)
-    
-      
-
-        player_options_handler(game_deck, ai_score, player_score, ai_hand, player_hand, player_chips)
         
+        game_deck, _ = player_options_handler(game_deck, ai_score, player_score, ai_hand, player_hand, player_chips)
+        game_running = continue_op()
 
 
             
