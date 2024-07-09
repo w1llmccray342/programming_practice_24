@@ -119,6 +119,7 @@ def hit_fn(deck, hand):
     
     for x in new_card:
         hand.append(x)
+        deck.remove(x)
     print(f"New hand is {hand}")
 
     return hand, deck
