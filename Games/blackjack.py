@@ -58,18 +58,27 @@ def find_sum_of_cards(ival, hand):
     return sum_of_cards
 
 def my_stats(score_ai, score_human, ai_hand, player_hand):
-    print(f"Dealer has a... {ai_hand}")
-    print(f"Dealer is at {score_ai} score.")
+    x = random.randint(0, 1)
+
+    print(f"Dealer has is showing a... {ai_hand[x]}")
+
     print(f"Player has...{player_hand}")
     print(f"Player is at {score_human} score.")
     print("What would you like to do?")
 
 
-def player_options():
-    print("1. Hit")
-    print("2. Stand")
-    print("3. Double Down")
-    print("4. Split")
+def player_options(player_cannot_hit):
+
+    if player_cannot_hit != True:
+        print("1. Hit")
+        print("2. Stand")
+        print("3. Double Down")
+        print("4. Split")
+
+    else:
+        print("2. Stand")
+        print("3. Double Down")
+        print("4. Split")
 
 def create_deck_blackjack():
     deck = Deck
@@ -77,7 +86,7 @@ def create_deck_blackjack():
 
     return game_deck
 
-def check_scores_set_win(game_state, ai_score, player_score):
+def check_scores_end_game(game_state, ai_score, player_score):
     player_win = False
     ai_win = False
     game_over = game_state
@@ -155,6 +164,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
     while inner_game_running == True:
 
         # Check if we have reached the end of the game:
+        # not_over_twenty_one = check_scores_end_game
         if not_over_twenty_one == False:
             inner_game_running = False
         
@@ -186,7 +196,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             score_ai = find_sum_of_cards(0, ai_hand)
         
         elif player_option == 3:
-            print("No more cards")
+            print("Doubling down")
             player_cannot_hit = True
             double_down_fn(chips)
 
