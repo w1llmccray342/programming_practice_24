@@ -96,11 +96,11 @@ def check_scores_end_game(player_cnt_hit, ai_cnt_hit, ai_score, player_score):
         return True, True, False
    
     elif player_score == 21:
-        print("Blackjack! You win!")
+        print("21! You win!")
         return True, True, False
    
     elif ai_score == 21:
-        print("Dealer has Blackjack! The house always wins!")
+        print("Dealer has 21! The house always wins!")
         return True, False, True
     
     elif player_cnt_hit and ai_cnt_hit and player_score > ai_score:

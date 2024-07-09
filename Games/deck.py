@@ -5,6 +5,12 @@ class Deck:
     def __init__(self) -> None:
         pass
 
+
+    def shuffle_deck(deck):
+        for cards in deck:
+            print(cards)
+            for x in cards:
+                print(x)
   
     def create_deck():
         default_deck = []
@@ -58,4 +64,6 @@ class Deck:
         
         print(drawn_cards, "Were removed from the deck!")
         return drawn_cards, deck
+    
+   
 
