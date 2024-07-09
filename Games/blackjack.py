@@ -154,7 +154,7 @@ def count_cards_left_in_deck(deck):
                 count += 1
 
         print(f"Cards remaining in deck: {count}")
-    
+        print(deck)
 
 
 def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, chips):
@@ -199,7 +199,6 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             player_stand_hand = deck_ow[0]
 
             deck_hand = player_stand_hand[0]
-            deck_deck = player_stand_hand[1]
             print(player_stand_hand)
             deck = player_stand_hand[1]
             ai_hand = deck_hand
