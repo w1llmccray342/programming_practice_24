@@ -61,7 +61,7 @@ def my_stats(score_ai, score_human, ai_hand, player_hand):
     x = random.randint(0, 1)
 
     print(f"Dealer has is showing a... {ai_hand[x]}")
-
+    print(f"Dealer is at {score_ai}")
     print(f"Player has...{player_hand}")
     print(f"Player is at {score_human} score.")
     print("What would you like to do?")
