@@ -81,16 +81,14 @@ def create_deck_blackjack():
     return game_deck
 
 def check_scores_end_game(game_state, ai_score, player_score):
-    if game_state == False:
-        
-        player_win = False
-        ai_win = False
+ player_win = False
+ ai_win = False
 
-        if ai_score > player_score and not ai_score > 21 and not ai_score == 21:
+ if not game_state:
+        if ai_score > player_score and ai_score <= 21:
             print("The house always wins!")
             ai_win = True
-    
-        elif ai_score < player_score and not player_score > 21 and not player_score == 21:
+        elif player_score > ai_score and player_score <= 21:
             print("Heey that's what we like to see")
             player_win = True
 
@@ -105,10 +103,8 @@ def check_scores_end_game(game_state, ai_score, player_score):
         elif player_score < ai_score:
             print("You win!")
             player_win = False
-    else:
-        print("Continuing the game!")
 
-    return player_win, ai_win
+ return player_win, ai_win
 
     
 
