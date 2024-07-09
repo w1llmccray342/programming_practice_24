@@ -32,13 +32,6 @@ class Deck:
     def assign_value():
         pass
 
-    def check_if_empty(deck, suit_index):
-        
-        if (all(len(deck[suit_index]) == 0)):
-            print("Deck is empty, creating a new deck!")
-            deck = Deck.create_deck()
-
-        return deck
 
     # Function to draw a given number of cards from a newly created deck
     def draw_card(deck, nums):
@@ -53,13 +46,11 @@ class Deck:
 
         
         for _ in range(nums):
+
             while  True:
                 suit_index = random.randint(0, 3)
                 if deck[suit_index]:
                     break
-
-            Deck.check_if_empty(deck, suit_index) 
-           
 
             card_index = random.randint(0, len(deck[suit_index]) - 1)
             drawn_card = deck[suit_index].pop(card_index)
@@ -67,3 +58,4 @@ class Deck:
         
         print(drawn_cards, "Were removed from the deck!")
         return drawn_cards, deck
+

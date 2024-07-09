@@ -160,6 +160,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
     while inner_game_running == True:
         count_cards_left_in_deck(deck)
 
+
         #os.system("clear")
 
         my_stats(score_ai, score_human, ai_hand, player_hand)
