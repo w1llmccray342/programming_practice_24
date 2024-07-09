@@ -233,8 +233,8 @@ def game_loop():
         player_hand = list(player_hand)
         ai_hand = list(ai_hand)
 
-        player_score = find_sum_of_cards(player_hand)
-        ai_score = find_sum_of_cards(ai_hand)
+        player_score = find_sum_of_cards(0, player_hand)
+        ai_score = find_sum_of_cards(0, ai_hand)
 
         print(player_hand, ai_hand, player_score, ai_score)
         
