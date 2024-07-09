@@ -206,6 +206,11 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             player_cannot_hit = True
             double_down_fn(chips)
 
+
+        player_win, ai_win = check_scores_end_game(over_twenty_one, score_ai, score_human)
+        if player_win or ai_win:
+            inner_game_running = False
+
     return deck, inner_game_running
 
 
