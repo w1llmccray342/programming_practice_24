@@ -58,7 +58,7 @@ class Deck:
             my_second_draw = random.randint(0, len(new_deck[my_draw]) - 1)
 
             drawn_card = new_deck[my_draw][my_second_draw]
-            new_deck[my_draw].remove(drawn_card)
+            new_deck = new_deck[my_draw].remove(drawn_card)
             drawn_cards.append(drawn_card)
 
 
