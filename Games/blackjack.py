@@ -11,12 +11,14 @@ def ante(chips):
     pass
 
 def continue_op():
-    continue_opt = input("Press Y to continue or N to close the program: ").upper()
+    continue_opt = input("Would you like to play another hand? Y\N:  ").upper()
 
     if continue_opt == "Y":
         os.system("clear")
+        print("Best of luck")
         return True
     else:
+        print("Come back again soon!")
         return False
 
 
