@@ -11,7 +11,7 @@ def ante(chips):
     pass
 
 def continue_op():
-    continue_opt = input("Would you like to play another hand? Y\N:  ").upper()
+    continue_opt = input("Would you like to play another hand? Y/N:  ").upper()
 
     if continue_opt == "Y":
         os.system("clear")
