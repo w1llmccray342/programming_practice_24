@@ -114,9 +114,7 @@ def hit_fn(deck, hand):
     
 # Player can no longer hit AI is forced to hit.
 def stand_fn(deck, hand):
-    
     new_hand, deck = hit_fn(deck, hand)
-    hand.append(new_hand)
     return new_hand, deck
 
 
@@ -178,30 +176,14 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         # Do all ai moves here
         # os.system("clear")
         if player_option == 1 and player_cannot_hit != True and not_over_twenty_one == True:
-            print(type(player_hand), player_hand)
-            # Overwrite player_hand
-            ow_list = hit_fn(deck, player_hand)  
-            ow_list = list(ow_list)
-            my_hand = ow_list[0]
-            
-            player_hand = my_hand
-            deck = ow_list[1]
-
-            score_human = find_sum_of_cards(score_human, player_hand)
+            player_hand, deck = hit_fn(deck, player_hand)
+            score_human = find_sum_of_cards(0, player_hand)
         
         elif player_option == 2 or player_cannot_hit == True and not_over_twenty_one == True: 
             print("No more cards.")
             player_cannot_hit = True
-            deck_ow = stand_fn(deck, ai_hand)
-            deck_ow = list(deck_ow)
-            player_stand_hand = deck_ow[0]
-
-            print(player_stand_hand)
-            deck = player_stand_hand[1]
-            ai_hand = player_stand_hand[0]
-            print(f"Current AI hand is {ai_hand}")
-
-            score_ai = find_sum_of_cards(score_ai, ai_hand)
+            ai_hand, deck = stand_fn(deck, ai_hand)
+            score_ai = find_sum_of_cards(0, ai_hand)
         
         elif player_option == 3:
             print("No more cards")
