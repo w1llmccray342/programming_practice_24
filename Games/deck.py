@@ -45,23 +45,17 @@ class Deck:
         # Can probably just reset the state of the game though to make this easier.
 
         drawn_cards = []
-        removed_cards = []
-        new_deck = deck
+     
 
         for _ in range(nums):
-            if all(len(suit) == 0 for suit in new_deck):
-                new_deck =  Deck.create_deck()
+            while  True:
+                suit_index = random.randint(0, 3)
+                if deck[suit_index]:
+                    break
 
-            my_draw = random.randint(0, 3)
-            while len(new_deck[my_draw]) ==  0:
-                my_draw = random.randint(0,3) 
-            my_second_draw = random.randint(0, len(new_deck[my_draw]) - 1)
-
-            drawn_card = new_deck[my_draw][my_second_draw]
-            new_deck[my_draw].remove(drawn_card)
-            drawn_cards.append(drawn_card)
-            
-            print(new_deck)
+            card_index = random.randint(0, len(deck[suit_index]) - 1)
+            drawn_card = deck[suit_index].pop(card_index)
+            drawn_cards.append(drawn_card)        
         
         print(drawn_cards, "Were removed from the deck!")
-        return drawn_cards, new_deck
+        return drawn_cards, deck
