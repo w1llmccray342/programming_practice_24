@@ -138,11 +138,11 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- Red Joker  - Reverse         
+ Red Joker  - Reverse(Player skips their turn and dealer draws one card)
  
- Black Joker - Game Over         
+ Black Joker - Game Over(Player Loses x2 their ante.)         
 
- Empty card - Empty Hand and Draw a New One
+ Empty card - Empty Hand and Draw a New One (Player can discard either their hand or the AI's hand.)
 
   _________           _________           _________
  |*   ?   *|         |% \|||/ %|         |         |

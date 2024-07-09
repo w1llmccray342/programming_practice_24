@@ -170,8 +170,23 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
     
     while inner_game_running == True:
 
+
+        
         # Clear some junk:
         os.system("clear")
+        if player_cannot_hit or ai_cnt_hit:
+               game_over, player_win, ai_win = check_scores_end_game(player_cannot_hit, ai_cnt_hit, score_ai, score_human)
+        if game_over:
+            if player_win:
+                # Do this
+                # Increase chips
+                pass
+            if ai_win:
+                # Do this
+                # Decrese chips
+                pass
+            inner_game_running = False
+
 
         print(f"Chips remaining: {chips}")
         
@@ -215,19 +230,6 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
         os.system("clear")
         my_stats(score_ai, score_human, ai_hand, player_hand)
-
-
-        game_over, player_win, ai_win = check_scores_end_game(player_cannot_hit, ai_cnt_hit, score_ai, score_human)
-        if game_over:
-            if player_win:
-                # Do this
-                # Increase chips
-                pass
-            if ai_win:
-                # Do this
-                # Decrese chips
-                pass
-            inner_game_running = False
 
     return deck, inner_game_running
 
