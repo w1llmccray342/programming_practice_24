@@ -114,14 +114,8 @@ def check_scores_set_win(game_state, ai_score, player_score):
 # Player hits the desired number of times
 def hit_fn(deck, hand):
     
-    new_card = Deck.draw_card(deck, 1)[0]
-    print(f"Hand is {hand}")
-    
-    for x in new_card:
-        hand.append(x)
-
-    print(f"New hand is {hand}")
-
+    new_card, deck = Deck.draw_card(deck, 1)
+    hand.append(new_card[0])
     return hand, deck
    
 
@@ -130,9 +124,9 @@ def hit_fn(deck, hand):
 # Player can no longer hit AI is forced to hit.
 def stand_fn(deck, hand):
     player_cannot_hit = True
-    new_hand = hit_fn(deck, hand)
+    new_hand, deck = hit_fn(deck, hand)
 
-    return new_hand, player_cannot_hit
+    return new_hand, player_cannot_hit, deck
 
 
 # Player doubles down ANTE for a single card, call hit fn once here and append that to player_score
