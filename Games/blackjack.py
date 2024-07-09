@@ -108,7 +108,7 @@ def check_scores_end_game(game_state, ai_score, player_score):
     else:
         print("Continuing the game!")
 
-    return game_state
+    return player_win, ai_win
 
     
 
@@ -166,8 +166,9 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
         # Clear some junk:
         os.system("clear")
-        inner_game_running, _ = check_scores_end_game(over_twenty_one, score_ai, score_human)
-        if not inner_game_running:
+        player_win, ai_win = check_scores_end_game(over_twenty_one, score_ai, score_human)
+        if player_win or ai_win:
+            inner_game_running = False
             break
         
         
