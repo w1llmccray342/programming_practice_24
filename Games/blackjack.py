@@ -173,7 +173,6 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
 
         
         # Clear some junk:
-        os.system("clear")
         game_over, player_win, ai_win = check_scores_end_game(player_cannot_hit, ai_cnt_hit, score_ai, score_human)
         if game_over:
             if player_win:
@@ -185,6 +184,7 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
                     # Decrese chips
                 pass
             inner_game_running = False
+            break
 
 
         print(f"Chips remaining: {chips}")
