@@ -199,8 +199,8 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
         elif player_option == 3:
             double_down_fn(chips)
 
-        if len(deck_deck) == len(deck):
-            print("Deck is the same length!")
+        if len(deck_deck) == len(deck) and len(ow_list[1]) == len(deck):
+            print("The decks are the same length!")
 
 
 
