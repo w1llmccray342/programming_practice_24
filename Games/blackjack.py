@@ -85,12 +85,15 @@ def check_scores_end_game(ai_score, player_score):
     if player_score > 21:
         print("You bust! The house always wins!")
         return True, False, True
+   
     elif ai_score > 21:
         print("Dealer busts! You win!")
         return True, True, False
+   
     elif player_score == 21:
         print("Blackjack! You win!")
         return True, True, False
+   
     elif ai_score == 21:
         print("Dealer has Blackjack! The house always wins!")
         return True, False, True
@@ -189,7 +192,8 @@ def player_options_handler(deck, score_ai, score_human, ai_hand, player_hand, ch
             player_cannot_hit = True
             double_down_fn(chips)
 
-        game_over, player_win, ai_win = check_scores_end_game(score_ai, score_human)
+        os.system("clear")
+        my_stats(score_ai, score_human, ai_hand, player_hand)
 
 
         game_over, player_win, ai_win = check_scores_end_game(score_ai, score_human)
