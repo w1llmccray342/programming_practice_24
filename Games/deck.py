@@ -60,8 +60,6 @@ class Deck:
             drawn_card = new_deck[my_draw][my_second_draw]
             new_deck[my_draw].remove(drawn_card)
             drawn_cards.append(drawn_card)
-
-
             
             print(new_deck)
         

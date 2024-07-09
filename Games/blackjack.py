@@ -114,7 +114,7 @@ def check_scores_set_win(game_state, ai_score, player_score):
 # Player hits the desired number of times
 def hit_fn(deck, hand):
     
-    new_card = Deck.draw_card(deck, 1)[0]
+    new_card = deck.draw_card(deck, 1)[0]
     print(f"Hand is {hand}")
     
     for x in new_card:
@@ -132,7 +132,7 @@ def stand_fn(deck, hand):
     player_cannot_hit = True
     new_hand = hit_fn(deck, hand)
 
-    return new_hand, deck, player_cannot_hit
+    return new_hand, player_cannot_hit
 
 
 # Player doubles down ANTE for a single card, call hit fn once here and append that to player_score
