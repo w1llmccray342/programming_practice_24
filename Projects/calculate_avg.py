@@ -9,6 +9,9 @@ class  Assignment:
     def __str__(self):
         return f"{self.__name} holds {self.__weight} weight with a score of {self.score}"
     
+    def return_description(self):
+        print(f"{self.__name} ")
+    
 class  Homework(Assignment):
     pass
 

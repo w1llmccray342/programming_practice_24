@@ -51,8 +51,9 @@ def generate_master_list():
     return my_master_obj_list
 
 def display_master_list(obj_list):
-    for obj in obj_list:
-        print(obj)
+    for object_type in obj_list:
+        for object in object_type:
+            print(object)
 
 
 my_master_list = generate_master_list()
