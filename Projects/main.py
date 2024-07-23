@@ -69,10 +69,13 @@ def calculate_average(obj_list):
             sum += object.score * my_obj_weight
             total_numbers += 1
         
-        avg = sum / total_numbers
-        print(f"The current average for the class is... {avg}%")
+    avg = sum / total_numbers
+    print(f"The current average for the class is... {avg}%")
+    
+    return avg
 
 
 my_master_list = generate_master_list()
 display_master_list(my_master_list)
+calculate_average(my_master_list)
 
