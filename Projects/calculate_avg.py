@@ -77,6 +77,11 @@ class  Assignment:
                 
                 elif type(obj) == Test:
                     total_test += obj.score * obj.return_obj_weight()
+                
+        print (f"Totals in Assignments: {total_assignment}")
+        print(f"Totals in Homework: {total_hw}")
+        print(f"Totals in Quizzes: {total_quiz}")
+        print(f"Totals in Tests: {total_test}")
             
         #weighted_avg = total_weighted_score / total_weight
         #weighted_avg = weighted_avg * 100
