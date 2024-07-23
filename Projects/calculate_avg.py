@@ -54,7 +54,6 @@ class  Assignment:
     
     def calculate_average(obj_list):
         sum = 0 
-        my_stored_weight = 0
 
         for object_type in obj_list:
             my_stored_weight += object_type[0].return_obj_weight()
@@ -63,11 +62,10 @@ class  Assignment:
                 my_obj_weight = object.return_obj_weight()
                 sum += object.score * my_obj_weight
                 print(sum)
-                print(my_stored_weight)
 
             
         weighted_avg = sum / my_stored_weight
-        print(f"The current average for the student is... {weighted_avg}%")
+        print(f"The current average for the student is... {sum}%")
     
         return weighted_avg
     
