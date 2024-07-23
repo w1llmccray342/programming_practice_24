@@ -54,7 +54,7 @@ class  Assignment:
     
     @staticmethod
     def calculate_average(obj_list):
-        total_weighted_score = 0
+        total_weight = 0
         total_assignment = 0
         total_hw = 0
         total_quiz = 0
