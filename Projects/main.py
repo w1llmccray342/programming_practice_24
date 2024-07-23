@@ -54,7 +54,7 @@ def display_master_list(obj_list):
     i = 1
     for object_type in obj_list:
         for object in object_type:
-            print(f"OBJ#{i} object")
+            print(f"OBJ#{i} {object}")
             i += 1
 
 
