@@ -51,9 +51,11 @@ def generate_master_list():
     return my_master_obj_list
 
 def display_master_list(obj_list):
+    i = 1
     for object_type in obj_list:
         for object in object_type:
-            print(object)
+            print(f"OBJ#{i} object")
+            i += 1
 
 
 my_master_list = generate_master_list()
