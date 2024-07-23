@@ -19,7 +19,7 @@ nums = 0
 
 # 
 for assignment_type in my_master_obj_list:
-    nums_to_add = input(int(f"Please type the number of assignments you would like to check"))
+    nums_to_add = int(input(f"Please type the number of assignments you would like to check"))
 
     if assignment_type == my_assign_objs:
         my_name = "Assignment"
@@ -35,7 +35,8 @@ for assignment_type in my_master_obj_list:
         my_weight = 0.4
 
     for i in range(nums_to_add):
-        my_score = input(float(f"Please enter the {i + 1} score for {my_name}"))
-        my_obj_to_add = my_master_obj_list[0](my_name, my_weight, my_score)
+        my_score = float(input(f"Please enter the {i + 1} score for {my_name}"))
+        my_obj_to_add = my_master_obj_list[nums](my_name, my_weight, my_score)
+    nums += 1
 
     
