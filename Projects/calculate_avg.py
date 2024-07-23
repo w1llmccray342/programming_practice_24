@@ -63,10 +63,9 @@ class  Assignment:
 
             for obj in object_type:
                 total_weighted_score += obj.score * obj.return_obj_weight()
-                total_weight += obj.return_obj_weight()
-
+        
             
-        weighted_avg = total_weighted_score / total_weight
+        weighted_avg = total_weighted_score 
         print(f"The current average for the student is... {weighted_avg:.2f}%")
     
         return round(weighted_avg, 2)
