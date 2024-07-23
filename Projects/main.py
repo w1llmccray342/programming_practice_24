@@ -74,7 +74,7 @@ def calculate_average(obj_list):
     return weighted_avg
 
 
-my_master_list = generate_master_list()
+my_master_list = calculate_avg.Assignment.generate_master_list()
 display_master_list(my_master_list)
 calculate_average(my_master_list)
 
