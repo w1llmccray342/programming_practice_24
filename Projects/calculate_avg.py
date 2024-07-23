@@ -55,21 +55,34 @@ class  Assignment:
     @staticmethod
     def calculate_average(obj_list):
         total_weighted_score = 0
-        total_weight = 0 
+        total_assignment = 0
+        total_hw = 0
+        total_quiz = 0
+        total_test = 0
 
+        # Instead of grabbing the cumulative total for everying we should be
         for object_type in obj_list:
 
             total_weight += object_type[0].return_obj_weight()
 
             for obj in object_type:
-                total_weighted_score += obj.score * obj.return_obj_weight()
-        
+                if type(obj) == Assignment:
+                    total_assignment += obj.score * obj.return_obj_weight()
+                
+                elif type(obj) == Homework:
+                    total_hw += obj.score * obj.return_obj_weight()
+                
+                elif type(obj) == Quiz:
+                    total_quiz += obj.score * obj.return_obj_weight()
+                
+                elif type(obj) == Test:
+                    total_test += obj.score * obj.return_obj_weight()
             
-        weighted_avg = total_weighted_score / total_weight
-        weighted_avg = weighted_avg * 100
-        print(f"The current average for the student is... {weighted_avg:.2f}%")
+        #weighted_avg = total_weighted_score / total_weight
+        #weighted_avg = weighted_avg * 100
+        #print(f"The current average for the student is... {weighted_avg:.2f}%")
     
-        return round(weighted_avg, 2)
+        #return round(weighted_avg, 2)
     
 class  Homework(Assignment):
     pass
