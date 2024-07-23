@@ -62,6 +62,7 @@ class  Assignment:
             for object in object_type:
                 my_obj_weight = object.return_obj_weight()
                 sum += object.score * my_obj_weight
+                print(sum)
                 print(my_stored_weight)
 
             
