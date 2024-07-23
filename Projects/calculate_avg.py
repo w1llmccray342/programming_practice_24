@@ -54,6 +54,7 @@ class  Assignment:
     
     def calculate_average(obj_list):
         sum = 0 
+        my_stored_weight = 0
 
         for object_type in obj_list:
             my_stored_weight += object_type[0].return_obj_weight()
