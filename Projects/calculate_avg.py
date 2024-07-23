@@ -53,20 +53,18 @@ class  Assignment:
         return my_master_obj_list
     
     def calculate_average(obj_list):
-        sum = 0 
-        my_stored_weight = 0
+        total_weighted_score = 0
+        total_weight = 0 
 
         for object_type in obj_list:
-            my_stored_weight += object_type[0].return_obj_weight()
-            
-            for object in object_type:
-                my_obj_weight = object.return_obj_weight()
-                sum += object.score * my_obj_weight
-                print(sum)
+
+            for obj in object_type:
+                total_weighted_score += obj.score * obj.return_obj_weight()
+                total_weight += obj.return_obj_weight()
 
             
-        weighted_avg = sum / my_stored_weight
-        print(f"The current average for the student is... {sum}%")
+        weighted_avg = total_weighted_score / total_weight
+        print(f"The current average for the student is... {weighted_avg:.2f}%")
     
         return round(weighted_avg, 2)
     
