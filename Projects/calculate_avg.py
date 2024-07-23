@@ -64,7 +64,7 @@ class  Assignment:
                 sum += object.score * my_obj_weight
 
             
-        weighted_avg = sum
+        weighted_avg = sum / my_stored_weight
         print(f"The current average for the student is... {weighted_avg}%")
     
         return weighted_avg
