@@ -37,7 +37,7 @@ for assignment_type in my_master_obj_list:
     for i in range(nums_to_add):
         my_score = float(input(f"Please enter the score for {my_name} #{i+1}: \n"))
         my_obj_to_add = my_master_class_list[nums](my_name, my_weight, my_score)
-        my
+        assignment_type.append(my_obj_to_add)
     
     nums += 1
 
