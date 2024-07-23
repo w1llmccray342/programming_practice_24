@@ -85,7 +85,7 @@ class  Assignment:
 
 
             
-        weighted_avg = sum(total_assignment, total_hw, total_quiz, total_test)
+        weighted_avg = total_assignment + total_hw + total_quiz + total_test
         print(f"The current average for the student is... {weighted_avg:.2f}%")
     
         return round(weighted_avg, 2)
