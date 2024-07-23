@@ -59,7 +59,7 @@ class  Assignment:
 
         for object_type in obj_list:
 
-            total_weight = sum(obj.get_weight() for obj in object_type)
+            total_weight = sum(obj.return_obj_weight() for obj in object_type)
 
             for obj in object_type:
                 total_weighted_score += obj.score * obj.return_obj_weight()
