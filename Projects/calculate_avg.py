@@ -9,6 +9,15 @@ class  Assignment:
     def __str__(self):
         return f"{self.__name} holds {self.__weight} weight with a score of {self.score}"
     
+class  Homework(Assignment):
+    pass
+
+class  Quiz(Assignment):
+    pass
+
+class  Test(Assignment):
+    pass
+    
 class Average:
     
     def __init__(self):
