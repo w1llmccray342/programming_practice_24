@@ -5,6 +5,7 @@ import calculate_avg
 # my_test_obj = calculate_avg.Quiz("Quiz", 0.3, 10)
 # my_assign_obj = calculate_avg.Test("Test", 0.4, 10)
 
+
 # print(my_assign_obj, "\n", my_test_obj, "\n", my_hw_obj, "\n", my_quiz_obj)
 
 
@@ -54,8 +55,22 @@ def display_master_list(obj_list):
     i = 1
     for object_type in obj_list:
         for object in object_type:
-            print(f"OBJ#{i} {object}")
+            print(f"OBJ#{i} of type {object}")
             i += 1
+
+def calculate_average(obj_list):
+    sum = 0
+    total_numbers = 0
+    
+    for object_type in obj_list:
+        
+        for object in object_type:
+            my_obj_weight = object.return_obj_weight()
+            sum += object.score * my_obj_weight
+            total_numbers += 1
+        
+        avg = sum / total_numbers
+        print(f"The current average for the class is... {avg}%")
 
 
 my_master_list = generate_master_list()
