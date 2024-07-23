@@ -52,11 +52,14 @@ class  Assignment:
 
         return my_master_obj_list
     
+    @staticmethod
     def calculate_average(obj_list):
         total_weighted_score = 0
         total_weight = 0 
 
         for object_type in obj_list:
+
+            total_weight = sum(obj.get_weight() for obj in object_type)
 
             for obj in object_type:
                 total_weighted_score += obj.score * obj.return_obj_weight()
