@@ -82,12 +82,13 @@ class  Assignment:
         print(f"Totals in Homework: {total_hw}")
         print(f"Totals in Quizzes: {total_quiz}")
         print(f"Totals in Tests: {total_test}")
+
+
             
-        #weighted_avg = total_weighted_score / total_weight
-        #weighted_avg = weighted_avg * 100
-        #print(f"The current average for the student is... {weighted_avg:.2f}%")
+        weighted_avg = sum(total_assignment, total_hw, total_quiz, total_test)
+        print(f"The current average for the student is... {weighted_avg:.2f}%")
     
-        #return round(weighted_avg, 2)
+        return round(weighted_avg, 2)
     
 class  Homework(Assignment):
     pass
