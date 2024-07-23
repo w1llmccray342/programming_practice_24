@@ -68,7 +68,7 @@ class  Assignment:
         weighted_avg = sum / my_stored_weight
         print(f"The current average for the student is... {sum}%")
     
-        return weighted_avg
+        return round(weighted_avg, 2)
     
 class  Homework(Assignment):
     pass
